@@ -8,8 +8,4 @@ class Review < ApplicationRecord
   validates_inclusion_of :fits_taste, :in => [true, false]
   validates :lighting, presence: true
   validates :cleanliness, presence: true
-
-  def validate_boolean
-
-  end
 end
