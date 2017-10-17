@@ -17,13 +17,8 @@ RSpec.describe Restaurant, type: :model do
   it {should have_valid(:zip).when('02111') }
   it {should_not have_valid(:zip).when(nil, '') }
 
-<<<<<<< HEAD
-  it {should have_valid(:dollar_value).when(1) }
-  it {should_not have_valid(:dollar_value).when(nil, '') }
-=======
   it {should have_valid(:dollar_value).when(1, 2, 3) }
   it {should_not have_valid(:dollar_value).when(nil, '', 5, 10394) }
->>>>>>> master
 
   it {should have_valid(:description).when('It\'s a restaurant!', nil) }
 
