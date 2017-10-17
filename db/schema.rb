@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20171017174127) do
     t.string "city", null: false
     t.string "state", null: false
     t.string "zip", null: false
-    t.string "dollar_value", null: false
+    t.integer "dollar_value", null: false
     t.text "description"
     t.string "picture"
     t.string "phone_number"
