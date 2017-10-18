@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Oregano');
+
+.top-bar {
+  background-color: #c84648;
+  color: white;
+  margin: 0;
+  padding-right: 30px;
+  padding-left: 20px;
+}
+
+.menu-text {
+  color: white;
+  font-size: 24px;
+  font-family: "Oregano", cursive;
+  padding-left: 20px;
+  display: inline;
+  float: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+a {
+  color: white;
+  font-size: 18px;
+  padding-right: 15px;
+  float: right;
+  display: inline;
+}
