@@ -28,4 +28,10 @@ RSpec.describe Restaurant, type: :model do
   it {should_not have_valid(:phone_number).when(nil, '') }
 
   it {should have_valid(:website_url).when('www.Panera.com', nil) }
+
+  it {should belong_to(:user)}
+
+  it {should have_many(:reviews)}
+
+  it {should_not belong_to(:review)}
 end
