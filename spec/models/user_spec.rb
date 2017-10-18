@@ -13,6 +13,16 @@ RSpec.describe User, type: :model do
   it {should have_valid(:email).when("buster@bluth.com")}
   it {should_not have_valid(:email).when(nil, "")}
 
+  it {should have_valid(:avatar).when("http://www.johmsmialig.com")}
+
+  it {should have_many(:reviews)}
+
+  it {should have_many(:restaurants)}
+
+  it {should_not belong_to(:restaurant)}
+
+  it {should_not belong_to (:reviews)}
+
   it "has a matching password confirmation for the password" do
     user = User.new
     user.password = "password"
