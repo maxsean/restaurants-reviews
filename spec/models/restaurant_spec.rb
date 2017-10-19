@@ -33,5 +33,13 @@ RSpec.describe Restaurant, type: :model do
 
   it {should have_many(:reviews)}
 
+  it {should have_many(:restaurant_dining_types)}
+
+  it {should have_many(:restaurant_food_types)}
+
+  it {should have_many(:food_types).through(:restaurant_food_types)}
+
+  it {should have_many(:dining_types).through(:restaurant_dining_types)}
+
   it {should_not belong_to(:review)}
 end

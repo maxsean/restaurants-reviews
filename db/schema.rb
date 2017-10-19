@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018143412) do
+ActiveRecord::Schema.define(version: 20171018202239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dining_types", force: :cascade do |t|
+    t.bigint "restaurant_dining_type_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_dining_type_id"], name: "index_dining_types_on_restaurant_dining_type_id"
+  end
+
+  create_table "food_types", force: :cascade do |t|
+    t.bigint "restaurant_food_type_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_food_type_id"], name: "index_food_types_on_restaurant_food_type_id"
+  end
+
+  create_table "restaurant_dining_types", force: :cascade do |t|
+    t.bigint "restaurant_id", null: false
+    t.bigint "dining_type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dining_type_id"], name: "index_restaurant_dining_types_on_dining_type_id"
+    t.index ["restaurant_id"], name: "index_restaurant_dining_types_on_restaurant_id"
+  end
+
+  create_table "restaurant_food_types", force: :cascade do |t|
+    t.bigint "restaurant_id", null: false
+    t.bigint "food_type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_type_id"], name: "index_restaurant_food_types_on_food_type_id"
+    t.index ["restaurant_id"], name: "index_restaurant_food_types_on_restaurant_id"
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name", null: false
