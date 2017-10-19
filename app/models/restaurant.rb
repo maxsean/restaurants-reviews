@@ -1,4 +1,11 @@
 class Restaurant < ApplicationRecord
+
+
+  def self.search(search)
+    where("name ilike ?", "%#{search}%")
+    # where(dollar_value: search)
+  end
+
   belongs_to :user
   has_many :reviews
 

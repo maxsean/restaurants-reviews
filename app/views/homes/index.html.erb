@@ -1,3 +1,9 @@
 
 <%= javascript_pack_tag 'index.js' %>
+
 <div id="app"></div>
+
+<%= form_tag(api_v1_restaurants_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
