@@ -8,6 +8,10 @@ class Restaurant < ApplicationRecord
 
   belongs_to :user
   has_many :reviews
+  has_many :restaurant_dining_types
+  has_many :restaurant_food_types
+  has_many :food_types, through: :restaurant_food_types
+  has_many :dining_types, through: :restaurant_dining_types
 
   validates :name, presence: true
   validates :address, presence: true

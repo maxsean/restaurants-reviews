@@ -26,3 +26,25 @@ a {
   float: right;
   display: inline;
 }
+
+.welcome-quote {
+  color: white;
+  background-color: #adc0b4;
+  font-size: 30px;
+  line-height: 40px;
+  padding: 40px 200px;
+}
+
+.image-container {
+  /*min-height: 150px;
+  max-height: 150px;*/
+}
+.restaurant-image {
+  float: left;
+  width: 150px;
+  height: 150px;
+  object-position: center;
+  object-fit: cover;
+  margin-left: 15px;
+  margin-right: 15px;
+}
