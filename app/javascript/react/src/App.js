@@ -1,9 +1,10 @@
 import React from 'react';
+import WelcomeContainer from './containers/WelcomeContainer'
 
 const App = props => {
   return(
     <div>
-      <h1>Hello World</h1>
+      <WelcomeContainer />
     </div>
   )
 }
