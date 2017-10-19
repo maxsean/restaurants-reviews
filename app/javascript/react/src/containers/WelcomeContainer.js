@@ -5,21 +5,7 @@ class WelcomeContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurant: {
-        id: 2,
-        name: "Five Guys",
-        address: "across the street",
-        city: "Boston",
-        state: "MA",
-        zip: "02111",
-        dollar_value: 1,
-        description: "It's Five Guys",
-        picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Five_Guys%2C_Merritt_Island.JPG/1200px-Five_Guys%2C_Merritt_Island.JPG",
-        phone_number: "1234567890",
-        website_url: "www.fiveguys.com",
-        dining_type: "finest dining",
-        food_type: "Five Guys"
-      }
+      restaurant: {}
     }
   }
   render() {
