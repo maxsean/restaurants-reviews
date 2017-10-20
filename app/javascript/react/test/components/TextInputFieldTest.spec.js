@@ -14,6 +14,7 @@ describe('TextInputField', () => {
         type='text'
         value=''
         label='name'
+        placeholder=''
       />
     );
   });
@@ -23,6 +24,7 @@ describe('TextInputField', () => {
       id: 'name',
 	    name: 'name',
 	    type: 'text',
+      placeholder: '',
 	    value: undefined
     });
   });
