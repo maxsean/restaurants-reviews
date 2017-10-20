@@ -26,7 +26,7 @@ class RestaurantsContainer extends Component {
     let addNewRestaurant = (formPayLoad) => this.addNewRestaurant(formPayLoad)
 
     return(
-      <div className='container'>
+      <div className='formContainer'>
         <RestaurantFormContainer
           addNewRestaurant={addNewRestaurant}
         />

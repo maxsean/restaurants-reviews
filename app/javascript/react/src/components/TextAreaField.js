@@ -1,10 +1,10 @@
 import React from 'react';
 
-const TextInputField = props => {
+const TextAreaField = props => {
   return(
     <label onChange={props.handleChange}>{props.label}
-    <input
-      placeholder={props.placeholder}
+    <textarea
+      className="area"
       id={props.name}
       name={props.name}
       type='text'
@@ -14,4 +14,4 @@ const TextInputField = props => {
   )
 }
 
-export default TextInputField;
+export default TextAreaField;
