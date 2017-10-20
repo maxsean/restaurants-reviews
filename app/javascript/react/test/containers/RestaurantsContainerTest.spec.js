@@ -13,7 +13,7 @@ describe('A test for RestaurantsContainer', () => {
   })
 
   it('renders a div with the correct props', () => {
-    expect(wrapper.find('div.container')).toBePresent();
+    expect(wrapper.find('div.formContainer')).toBePresent();
   });
 
   it('should render a single RestaurantFormContainer', () => {

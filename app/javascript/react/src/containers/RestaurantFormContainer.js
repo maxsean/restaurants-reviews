@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import TextInputField from '../components/TextInputField'
+import TextAreaField from '../components/TextAreaField'
 
 class RestaurantFormContainer extends Component {
   constructor(props) {
@@ -102,7 +103,7 @@ class RestaurantFormContainer extends Component {
           name="dollar_value"
           handleChange={this.handleChange}
         />
-        <TextInputField
+        <TextAreaField
           content={this.state.description}
           label="Description:"
           name="description"
@@ -115,6 +116,7 @@ class RestaurantFormContainer extends Component {
           handleChange={this.handleChange}
         />
         <TextInputField
+          placeholder="000-000-0000"
           content={this.state.phone_number}
           label="Phone Number:"
           name="phone_number"
