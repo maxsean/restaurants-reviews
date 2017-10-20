@@ -11,7 +11,7 @@ describe('RestaurantFormContainer', () => {
 
   beforeEach(() => {
     jasmineEnzyme();
-    spyOn(RestaurantFormContainer.prototype, 'handleChange').and.callThrough();
+    spyOn(RestaurantFormContainer.prototype, 'handleSubmit')
 
     wrapper = mount(
       <RestaurantFormContainer />
@@ -44,6 +44,11 @@ describe('RestaurantFormContainer', () => {
   it('should have a Clear button', () => {
     expect(wrapper.find('button').text()).toBe('Clear');
   });
+
+  it('should submit the form on click', () => {
+    console.log(wrapper.find('form').props().onSubmit())
+    expect(RestaurantFormContainer.prototype.handleSubmit).toHaveBeenCalled();
+  })
 
   it('should render text input field with specific props depending on state', () => {
     wrapper.setState({
@@ -88,12 +93,14 @@ describe('RestaurantFormContainer', () => {
         name: "zip",
         handleChange: jasmine.any(Function)
     })
+
     expect(wrapper.find(TextInputField).at(5).props()).toEqual({
         content: "2",
         label: "Pricing:",
         name: "dollar_value",
         handleChange: jasmine.any(Function)
     })
+
     expect(wrapper.find(TextInputField).at(6).props()).toEqual({
         content: "restaurant",
         label: "Description:",
