@@ -1,7 +1,7 @@
 import React from 'react'
 import TextField from '../components/TextField.js'
 
-class FormContainer extends React.Component {
+class SearchFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,6 @@ class FormContainer extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A search was made: ' + this.state.value)
     event.preventDefault()
     let formPayload = {
       value: this.state.value
@@ -37,4 +36,4 @@ render() {
 }
 
 }
-export default FormContainer;
+export default SearchFormContainer;

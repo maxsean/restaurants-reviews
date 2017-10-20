@@ -24,8 +24,7 @@ RSpec.describe Restaurant, type: :model do
 
   it {should have_valid(:picture).when('www.test/picture.com', nil) }
 
-  it {should have_valid(:phone_number).when('9786652426') }
-  it {should_not have_valid(:phone_number).when(nil, '') }
+  it {should have_valid(:phone_number).when('9786652426', nil) }
 
   it {should have_valid(:website_url).when('www.Panera.com', nil) }
 

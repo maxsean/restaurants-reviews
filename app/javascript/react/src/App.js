@@ -1,11 +1,12 @@
 import React from 'react';
-import WelcomeContainer from './containers/WelcomeContainer'
+import MainContainer from './containers/MainContainer'
 
 const App = props => {
 
   return(
     <div>
-      <WelcomeContainer />
+      <MainContainer />
+
     </div>
   )
 }
