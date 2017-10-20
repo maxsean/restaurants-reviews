@@ -13,7 +13,6 @@ class RestaurantsContainer extends Component {
   }
 
   addNewRestaurant(formPayLoad) {
-    debugger;
     fetch('/api/v1/restaurants', {
     method: 'POST',
     body: JSON.stringify(formPayLoad)
