@@ -1,6 +1,7 @@
 import RestaurantFormContainer from '../../src/containers/RestaurantFormContainer'
 import RestaurantsContainer from '../../src/containers/RestaurantsContainer'
 import TextInputField from '../../src/components/TextInputField'
+import TextAreaField from '../../src/components/TextAreaField'
 import { mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
@@ -101,25 +102,26 @@ describe('RestaurantFormContainer', () => {
         handleChange: jasmine.any(Function)
     })
 
-    expect(wrapper.find(TextInputField).at(6).props()).toEqual({
+    expect(wrapper.find(TextAreaField).props()).toEqual({
         content: "restaurant",
         label: "Description:",
         name: "description",
         handleChange: jasmine.any(Function)
     })
-    expect(wrapper.find(TextInputField).at(7).props()).toEqual({
+    expect(wrapper.find(TextInputField).at(6).props()).toEqual({
         content: "www.picture.com/image",
         label: "Picture:",
         name: "picture",
         handleChange: jasmine.any(Function)
     })
-    expect(wrapper.find(TextInputField).at(8).props()).toEqual({
+    expect(wrapper.find(TextInputField).at(7).props()).toEqual({
         content: "0000000000",
         label: "Phone Number:",
         name: "phone_number",
+        placeholder: '000-000-0000',
         handleChange: jasmine.any(Function)
     })
-    expect(wrapper.find(TextInputField).at(9).props()).toEqual({
+    expect(wrapper.find(TextInputField).at(8).props()).toEqual({
         content: "www.restaurant.com",
         label: "Restuarant Website:",
         name: "website_url",
