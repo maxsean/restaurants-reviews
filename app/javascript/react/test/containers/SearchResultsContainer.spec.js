@@ -10,9 +10,9 @@ describe('A test for SearchResultsContainer', () => {
 
   beforeEach(() => {
     const example = [
-      {name: "Panera", address: "55 Summer St.", city: "Boston",
+      {id: 1, name: "Panera", address: "55 Summer St.", city: "Boston",
               state: "MA", zip: "02111", dollar_value: 2, user_id: 1},
-      {name: "Danera", address: "85 Summer St.", city: "Cambridge",
+      {id: 2, name: "Danera", address: "85 Summer St.", city: "Cambridge",
               state: "MA", zip: "02121", dollar_value: 5, user_id: 2}
     ]
 
