@@ -46,7 +46,7 @@ describe('RestaurantFormContainer', () => {
   });
 
   it('should submit the form on click', () => {
-    console.log(wrapper.find('form').props().onSubmit())
+    wrapper.find('form').props().onSubmit()
     expect(RestaurantFormContainer.prototype.handleSubmit).toHaveBeenCalled();
   })
 
