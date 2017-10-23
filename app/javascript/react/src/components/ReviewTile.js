@@ -1,8 +1,10 @@
 import React from 'react';
 
 const ReviewTile = (props) => {
+  let date = Date(props.created_at).toString().substring(3,15)
   return(
     <div className="review-container">
+      <hr/>
       <div className="user-info">
         <p><strong>{props.user.username}</strong></p>
       </div>
@@ -17,7 +19,7 @@ const ReviewTile = (props) => {
         </div>
         <div className="review-comment">
           <h3>Comment</h3>
-          <p>Reviewed on {props.created_at}.strftime("%B, %d, %Y")</p>
+          <p>Reviewed on{date}</p>
           <p>{props.comment}</p>
         </div>
       </div>
