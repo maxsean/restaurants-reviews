@@ -1,6 +1,6 @@
 import React from 'react';
+import MainContainer from './containers/MainContainer'
 import { Route, IndexRoute, Router, browserHistory} from 'react-router';
-import WelcomeContainer from './containers/WelcomeContainer';
 import RestaurantsContainer from './containers/RestaurantsContainer';
 
 const App = (props) => {
@@ -8,7 +8,7 @@ const App = (props) => {
     <div>
       <Router history={browserHistory}>
         <Route path='/'>
-          <IndexRoute component={WelcomeContainer} />
+          <IndexRoute component={MainContainer} />
           <Route path='/restaurants/new'
             component={RestaurantsContainer}/>
         </Route>
