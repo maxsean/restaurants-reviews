@@ -16,7 +16,7 @@ describe('RestaurantTile', () => {
       zip="00000"
       dollar_value="1"
       description="my favorite description"
-      picture="www.test.fakephoto"
+      picture="https://goo.gl/images/Urrjky"
       phone_number="00000"
       website_url="www.test.fake"
       />
@@ -61,7 +61,7 @@ describe('RestaurantTile', () => {
 
   it('should have image of restaurant', () => {
     expect(wrapper.find('img')).toBePresent();
-    expect(wrapper.find('img')).toHaveProp('src', 'www.test.fakephoto')
+    expect(wrapper.find('img')).toHaveProp('src', 'https://goo.gl/images/Urrjky')
   })
 
 })
