@@ -1,4 +1,11 @@
 class Restaurant < ApplicationRecord
+
+
+  def self.search(search)
+    where("name ilike ?", "%#{search}%")
+    # where(dollar_value: search)
+  end
+
   belongs_to :user
   has_many :reviews
   has_many :restaurant_dining_types
@@ -12,6 +19,6 @@ class Restaurant < ApplicationRecord
   validates :state, presence: true
   validates :zip, presence: true, numericality: true, length: {is: 5}
   validates :dollar_value, presence: true, inclusion: { in: [1, 2, 3]}
-  validates :phone_number, numericality: true, length: {is: 10}
+  validates :phone_number, numericality: true, allow_nil: true, length: {is: 10}
   validates :user_id, presence: true
 end

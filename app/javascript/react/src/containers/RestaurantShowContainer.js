@@ -12,14 +12,19 @@ class RestaurantShowContainer extends React.Component {
 
   componentDidMount() {
     let restaurantId = this.props.params.id;
-    fetch()
+    fetch(`/api/v1/restaurants/${restaurantId}`)
     .then(response => response.json())
     .then(data => {
-      this.setState({ restaurant: data })
+      let restaurant = JSON.parse(data.restaurant)
+      this.setState({ restaurant: restaurant })
     })
   }
 
   render() {
+    let review;
+    if(this.state.restaurant.reviews != null) {
+      review = <ReviewIndexContainer reviews={this.state.restaurant.reviews}/>
+    }
     return(
       <div>
         <RestaurantShow
@@ -37,9 +42,7 @@ class RestaurantShowContainer extends React.Component {
           dining_type={this.state.restaurant.restaurant_dining_type}
           food_type={this.state.restaurant.restaurant_food_type}
         />
-        <ReviewIndexContainer
-          reviews={this.state.restaurant.reviews}
-        />
+        {review}
       </div>
     )
   }

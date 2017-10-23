@@ -5,7 +5,6 @@ class ReviewIndexContainer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-
     }
   }
   render() {
@@ -20,12 +19,15 @@ class ReviewIndexContainer extends React.Component {
           lighting={review.lighting}
           cleanliness={review.cleanliness}
           comment={review.comment}
+          created_at={review.created_at}
           user={review.user}
         />
       )
     })
     return(
       <div>
+        <hr />
+        <h2>Reviews</h2>
         {reviews}
       </div>
     )
