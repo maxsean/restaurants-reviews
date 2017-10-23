@@ -11,7 +11,7 @@ feature "users can sign up" do
 
     fill_in 'First Name', with: "John"
     fill_in 'Last Name', with: "Smith"
-    fill_in 'user_username', with: "johnsmith17"
+    fill_in 'username', with: "johnsmith17"
     fill_in 'Email', with: "john@smith.com"
     fill_in 'Password', with: "johnsmith2017"
     fill_in 'Confirm Password', with: "johnsmith2017"
