@@ -7,7 +7,7 @@ class RestaurantShowContainer extends React.Component {
     super(props);
     this.state = {
       restaurant: {},
-      user: {}
+      current_user: {}
     }
   }
 
@@ -19,7 +19,7 @@ class RestaurantShowContainer extends React.Component {
     })
     .then(response => response.json())
     .then(data => {
-      this.setState({ user: data.user })
+      this.setState({ current_user: data.user })
     })
   }
 
@@ -36,7 +36,10 @@ class RestaurantShowContainer extends React.Component {
   render() {
     let review;
     if(this.state.restaurant.reviews != null) {
-      review = <ReviewIndexContainer reviews={this.state.restaurant.reviews}/>
+      review = <ReviewIndexContainer
+        reviews={this.state.restaurant.reviews}
+        current_user={this.state.current_user}
+      />
     }
     return(
       <div>

@@ -5,10 +5,45 @@ class ReviewTile extends React.Component {
     super(props);
     this.state = {
       disabledUpvote: false,
-      disabledDownvote: false
+      disabledDownvote: false,
+      karma: 0
     }
     this.handleUpvoteClicked = this.handleUpvoteClicked.bind(this);
     this.handleDownvoteClicked = this.handleDownvoteClicked.bind(this);
+    this.handleClearClicked = this.handleClearClicked.bind(this);
+  }
+
+  componentDidMount() {
+    let check_state = {
+      user_id: this.props.current_user.id,
+      review_id: this.props.id
+    }
+    fetch('/api/v1/votes', {
+      method: "POST",
+      body: JSON.stringify(check_state)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data["value"] == -1) {
+        this.setState({
+          disabledUpvote: false,
+          disabledDownvote: true
+        })
+      } else if(data["value"] == 0) {
+        this.setState({
+          disabledUpvote: false,
+          disabledDownvote: false
+        })
+      } else if(data["value"] == 1) {
+        this.setState({
+          disabledUpvote: true,
+          disabledDownvote: false
+        })
+      }
+      this.setState({
+        karma: data["karma"]
+      })
+    })
   }
 
   handleUpvoteClicked() {
@@ -17,6 +52,19 @@ class ReviewTile extends React.Component {
        disabledUpvote: true,
        disabledDownvote: false
      });
+     let vote = {
+       user_id: this.props.current_user.id,
+       review_id: this.props.id,
+       value: 1
+     }
+     fetch('/api/v1/votes', {
+       method: "POST",
+       body: JSON.stringify(vote)}
+     )
+     .then(response => response.json())
+     .then(data => {
+       this.setState({karma: data["karma"]})
+     })
     }
   }
 
@@ -26,8 +74,42 @@ class ReviewTile extends React.Component {
         disabledUpvote: false,
         disabledDownvote: true
       });
+      let vote = {
+        user_id: this.props.current_user.id,
+        review_id: this.props.id,
+        value: -1
+      }
+      fetch('/api/v1/votes', {
+        method: "POST",
+        body: JSON.stringify(vote)}
+      )
+      .then(response => response.json())
+      .then(data => {
+        this.setState({karma: data["karma"]})
+      })
     }
   }
+
+  handleClearClicked() {
+    this.setState({
+      disabledUpvote: false,
+      disabledDownvote: false
+    });
+    let vote = {
+      user_id: this.props.current_user.id,
+      review_id: this.props.id,
+      value: 0
+    }
+    fetch('/api/v1/votes', {
+      method: "POST",
+      body: JSON.stringify(vote)}
+    )
+    .then(response => response.json())
+    .then(data => {
+      this.setState({karma: data["karma"]})
+    })
+  }
+
   render() {
    let date = Date(this.props.created_at).toString().substring(3,15)
    return(
@@ -61,6 +143,11 @@ class ReviewTile extends React.Component {
              disabled={this.state.disabledDownvote}
              onClick={this.handleDownvoteClicked}
            >Downvote</button>
+           <button
+             id="Clear"
+             onClick={this.handleClearClicked}
+           >Clear Vote</button>
+           <p>Score: {this.state.karma}</p>
          </div>
        </div>
      </div>

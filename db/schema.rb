@@ -102,8 +102,14 @@ ActiveRecord::Schema.define(version: 20171024124005) do
   end
 
   create_table "votes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "review_id", null: false
+    t.integer "value", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_votes_on_review_id"
+    t.index ["user_id", "review_id"], name: "index_votes_on_user_id_and_review_id", unique: true
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
 end

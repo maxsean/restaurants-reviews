@@ -22,6 +22,7 @@ class ReviewIndexContainer extends React.Component {
           comment={review.comment}
           created_at={review.created_at}
           user={review.user}
+          current_user={this.props.current_user}
         />
       )
     })

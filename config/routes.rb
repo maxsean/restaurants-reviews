@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :searches
       resources :restaurants
       resources :users
+      resources :votes
     end
   end
 
