@@ -39,6 +39,7 @@ describe('ReviewIndexContainer', () => {
 
   it('a ReviewTile component should have specified props', () => {
     expect(wrapper.find('ReviewTile').at(0).props()).toEqual({
+      id: 1,
       reason_of_visit: "outing",
       quality_of_service: 2,
       noise_level: 2,

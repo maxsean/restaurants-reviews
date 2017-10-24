@@ -12,6 +12,7 @@ class ReviewIndexContainer extends React.Component {
       return(
         <ReviewTile
           key={review.id}
+          id={review.id}
           reason_of_visit={review.reason_of_visit}
           quality_of_service={review.quality_of_service}
           noise_level={review.noise_level}

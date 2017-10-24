@@ -6,8 +6,21 @@ class RestaurantShowContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurant: {}
+      restaurant: {},
+      user: {}
     }
+  }
+
+  componentWillMount() {
+    fetch('/api/v1/users.json', {
+      credentials: 'same-origin',
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      this.setState({ user: data.user })
+    })
   }
 
   componentDidMount() {
