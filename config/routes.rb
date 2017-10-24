@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :homes, only: [:index]
+  resources :users
   root "homes#index"
 
   get "*path", to: "homes#index"
