@@ -36,6 +36,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :avatar, "Upload Your Picture:" %><br />
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Submit" %>
   </div>
