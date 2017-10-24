@@ -9,6 +9,11 @@ gem 'devise'
 gem 'webpacker'
 gem 'foundation-rails'
 gem 'jquery-rails'
+gem 'carrierwave', '1.2.0'
+gem 'fog'
+gem 'mini_magick'
+gem 'figaro'
+
 
 group :development do
   gem 'listen', '~> 3.0.5'
