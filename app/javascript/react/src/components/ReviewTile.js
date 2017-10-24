@@ -19,7 +19,7 @@ const ReviewTile = (props) => {
         </div>
         <div className="review-comment">
           <h3>Comment</h3>
-          <p>Reviewed on{date}</p>
+          <p>Reviewed on {date}</p>
           <p>{props.comment}</p>
         </div>
       </div>
