@@ -9,7 +9,7 @@ const RadioButtonField = props => {
           type="radio"
           className={props.name}
           value={1}
-          name="selector"
+          name={props.name}
           onChange={props.handleChange}
         />
         {" "}1{" "}
@@ -17,7 +17,7 @@ const RadioButtonField = props => {
           type="radio"
           value={2}
           className={props.name}
-          name="selector"
+          name={props.name}
           onChange={props.handleChange}
         />
         {" "}2{" "}
@@ -25,7 +25,7 @@ const RadioButtonField = props => {
           type="radio"
           value={3}
           className={props.name}
-          name="selector"
+          name={props.name}
           onChange={props.handleChange}
         />
         {" "}3{" "}
@@ -33,7 +33,7 @@ const RadioButtonField = props => {
           type="radio"
           value={4}
           className={props.name}
-          name="selector"
+          name={props.name}
           onChange={props.handleChange}
         />
         {" "}4{" "}
@@ -41,7 +41,7 @@ const RadioButtonField = props => {
           type="radio"
           value={5}
           className={props.name}
-          name="selector"
+          name={props.name}
           onChange={props.handleChange}
         />
         {" "}5{" "}

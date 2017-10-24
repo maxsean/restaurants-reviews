@@ -11,13 +11,4 @@ class Api::V1::RestaurantsController < ApplicationController
       render json: { restaurant: restaurant }
     end
   end
-
-  private
-
-  def restaurant_params(body)
-    body.require(:restaurant).permit(:name, :address, :city, :state, :zip, :dollar_value,
-      :description, :picture, :phone_number, :website_url, :user)
-  end
-
-
 end
