@@ -1,0 +1,16 @@
+<h1>Your Profile</h1>
+
+<button><%= link_to 'Edit Profile', edit_user_registration_path %></button>
+
+<div>
+Name: <%= @user.first_name %> <%= @user.last_name %> <br />
+
+Username: <%= @user.username %><br />
+
+Email: <%= @user.email %><br />
+
+Profile Picture: <br />
+<%= image_tag(@user.avatar.thumb) %>
+</div>
+
+<button><%= link_to 'Back', root_path %></button>
