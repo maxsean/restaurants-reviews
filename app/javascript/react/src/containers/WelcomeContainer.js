@@ -28,6 +28,8 @@ class WelcomeContainer extends Component {
         body: JSON.stringify(body)
       })
       .then(response => response.json())
+      .then(data => {
+      })
   }
 
 

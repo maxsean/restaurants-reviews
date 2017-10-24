@@ -8,7 +8,7 @@
 
 
 
-user1 = User.create!(first_name: "Mark", last_name: "Swinimer", username: "mswinimer", email: "mswinimernottaken@gmail.com", password: "123456")
+user1 = User.create!(first_name: "Mark", last_name: "Swinimer", username: "mswinimer", email: "markswinimer@gmail.com", password: "123456")
 
 
 restaurant1 = Restaurant.create!(name: "Panera", address: "55 Summer St.", city: "Boston", state: "MA", zip: "02111", dollar_value: 2,
