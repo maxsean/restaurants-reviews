@@ -32,3 +32,6 @@ review_1 = Review.create!(
   comment: "I will come back again.",
   user: user1
 )
+review1 = Review.create!(restaurant: restaurant1, reason_of_visit: "booze", quality_of_service: 2, noise_level: 1, fits_taste: true, lighting: 1, cleanliness: 2, comment: "This is a review, believe it...", user: user1)
+
+review2 = Review.create!(restaurant: restaurant1, reason_of_visit: "croutons", quality_of_service: 2, noise_level: 1, fits_taste: true, lighting: 1, cleanliness: 2, comment: "This is yet another review, don't believe it", user: user1)
