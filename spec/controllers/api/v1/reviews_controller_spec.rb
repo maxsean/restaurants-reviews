@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Api::V1::ReviewsController, type: :controller do
-  let!(:first_user) {User.create!(first_name: "John", last_name: "Smith", username: "johnsmith", email: "johnsmith@smith.com", password: "1234567" )}
+  let!(:first_user) {User.create!(id: 1, first_name: "John", last_name: "Smith", username: "johnsmith", email: "johnsmith@smith.com", password: "1234567" )}
   let!(:first_restaurant) { Restaurant.create!( name: "Panera", address: "55 Summer St.", city: "Boston",
     state: "MA", zip: "02111", dollar_value: 2, description: "something", picture: "fakephoto", phone_number: "1234567890",
     website_url: "asdf", user_id: 1) }
@@ -18,7 +18,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
         lighting: 3,
         cleanliness: 1,
         comment: "It was Food.",
-        user_id: 1,
+        user_id: first_user.id,
         restaurant_id: first_restaurant.id }.to_json
         expect{ post :create, body: post_json}.to change{ Review.count }.by(1)
       end
@@ -44,7 +44,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
             lighting: 3,
             cleanliness: 1,
             comment: "It was Food.",
-            user_id: 1,
+            user_id: first_user.id,
             restaurant_id: first_restaurant.id }.to_json
 
             post :create, body: post_json

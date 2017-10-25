@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Api::V1::SearchesController, type: :controller do
-  let!(:first_user) {User.create!(first_name: "Mary", last_name: "Swinimer", username: "maryswinimer", email: "maryswinimer@gmail.com", password: "1234567" )}
+  let!(:first_user) {User.create!(id: 1, first_name: "Mary", last_name: "Swinimer", username: "maryswinimer", email: "maryswinimer@gmail.com", password: "1234567" )}
   let!(:first_restaurant) { Restaurant.create!( name: "Jamba Juice", address: "Test", city: "Bronco",
           state: "PA", zip: "99999", dollar_value: 2, description: "something", picture: "fakephoto", phone_number: "1234567890",
           website_url: "asdf", user_id: 1) }
