@@ -43,8 +43,8 @@ RSpec.describe Api::V1::DemographicsController, type: :controller do
       expect(returned_json["children"][4]["children"].length).to eq 5
 
       expect(returned_json["children"][5]["name"]).to eq "Fits Taste"
-      expect(returned_json["children"][4]["children"]).to be_kind_of(Array)
-      expect(returned_json["children"][4]["children"].length).to eq 2
+      expect(returned_json["children"][5]["children"]).to be_kind_of(Array)
+      expect(returned_json["children"][5]["children"].length).to eq 2
     end
   end
 end
