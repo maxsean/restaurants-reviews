@@ -5,5 +5,4 @@ class Api::V1::SearchesController < ApplicationController
     restaurant = Restaurant.where("name LIKE ? OR city LIKE ?", "%#{body["value"]}%", "%#{body["value"]}%" )
     render json: { restaurant: restaurant }
   end
-
 end
