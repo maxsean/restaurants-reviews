@@ -1,7 +1,6 @@
 import React from 'react';
 
 const RestaurantTile = (props) => {
-
   return(
     <div className="restaurant-tile">
       <div className="image-container">
@@ -17,6 +16,9 @@ const RestaurantTile = (props) => {
         <p><strong>Description: </strong>{props.description}</p>
         <p><strong>Phone Number: </strong>{props.phone_number}</p>
         <p><strong>Website: </strong>{props.website_url}</p>
+      </div>
+      <div className="chart">
+        <button><a href={`/charts/${props.id}`}>Review Demographics</a></button>
       </div>
     </div>
   )

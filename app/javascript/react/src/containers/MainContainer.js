@@ -19,7 +19,6 @@ class MainContainer extends React.Component {
     fetch('/api/v1/restaurants')
     .then( response => response.json())
     .then( body => {
-      console.log(body)
       this.setState( { sample_restaurant: body.restaurant } )
       }
     )
@@ -40,7 +39,6 @@ class MainContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state.sample_restaurant);
     let container;
     if (this.state.search === true) {
       container = <SearchResultsContainer restaurants={this.state.search_results}/>
