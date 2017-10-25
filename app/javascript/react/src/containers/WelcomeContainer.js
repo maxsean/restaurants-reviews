@@ -17,6 +17,7 @@ class WelcomeContainer extends Component {
         </div>
 
         <RestaurantTile
+          id={this.props.sample_restaurant.id}
           name={this.props.sample_restaurant.name}
           address={this.props.sample_restaurant.address}
           city={this.props.sample_restaurant.city}

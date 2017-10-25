@@ -17,6 +17,9 @@ const RestaurantShow = (props) => {
         <p><strong>Phone Number: </strong>{props.phone_number}</p>
         <p><strong>Website: </strong>{props.website_url}</p>
       </div>
+      <div>
+        <button><a href={`/charts/${props.id}`}>Review Demographics</a></button>
+      </div>
     </div>
   )
 }
