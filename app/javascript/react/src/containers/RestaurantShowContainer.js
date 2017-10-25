@@ -15,17 +15,6 @@ class RestaurantShowContainer extends React.Component {
     this.addNewReview = this.addNewReview.bind(this)
   }
 
-  componentWillMount() {
-    fetch('/api/v1/users.json', {
-      credentials: 'same-origin',
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json'}
-    })
-    .then(response => response.json())
-    .then(data => {
-      this.setState({ current_user: data.user })
-    })
-  }
 
   componentWillMount() {
     fetch('/api/v1/users.json', {
