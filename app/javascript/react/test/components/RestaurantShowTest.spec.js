@@ -64,4 +64,9 @@ describe('RestaurantShow', () => {
     expect(wrapper.find('img')).toHaveProp('src', 'https://goo.gl/images/Urrjky')
   })
 
+  it('should have button for viewing review demographics', () => {
+    expect(wrapper.find('button')).toBePresent();
+    expect(wrapper.find('button').text()).toBe("Review Demographics")
+  })
+
 })
