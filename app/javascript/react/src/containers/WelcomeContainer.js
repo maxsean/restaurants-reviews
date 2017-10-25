@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import RestaurantTile from '../components/RestaurantTile'
+import PieChart from './PieChart'
 
 class WelcomeContainer extends Component {
   constructor(props) {
