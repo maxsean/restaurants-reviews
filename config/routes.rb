@@ -5,10 +5,13 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :searches
       resources :restaurants
+      resources :users
+      resources :votes
     end
   end
 
   resources :homes, only: [:index]
+  resources :users
   root "homes#index"
 
   get "*path", to: "homes#index"
