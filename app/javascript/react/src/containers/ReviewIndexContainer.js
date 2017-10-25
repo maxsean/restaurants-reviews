@@ -6,12 +6,19 @@ class ReviewIndexContainer extends React.Component {
     super(props);
     this.state = {
     }
+    this.handleDelete = this.handleDelete.bind(this)
   }
+
+  handleDelete(id) {
+    this.props.deleteReview(id)
+  }
+
   render() {
     let reviews = this.props.reviews.map(review => {
       return(
         <ReviewTile
           key={review.id}
+          id={review.id}
           reason_of_visit={review.reason_of_visit}
           quality_of_service={review.quality_of_service}
           noise_level={review.noise_level}
@@ -21,6 +28,8 @@ class ReviewIndexContainer extends React.Component {
           comment={review.comment}
           created_at={review.created_at}
           user={review.user}
+          handleDelete={() => this.handleDelete(review.id)}
+          current_user={this.props.current_user}
         />
       )
     })

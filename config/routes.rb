@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users
-    resources :restaurants
-    resources :reviews
+    resources :users, only: [:index, :show, :destroy]
+    resources :restaurants, only: [:index, :show, :destroy]
+    resources :reviews, only: [:index, :show, :destroy]
   end
 
   resources :homes, only: [:index]

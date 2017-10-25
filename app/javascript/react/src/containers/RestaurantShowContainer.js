@@ -8,24 +8,25 @@ class RestaurantShowContainer extends React.Component {
     super(props);
     this.state = {
       restaurant: {},
-      user: null,
+      current_user: null,
       review: null
     }
     this.addNewReview = this.addNewReview.bind(this)
+    this.deleteReview = this.deleteReview.bind(this)
+    this.fetchRestaurant = this.fetchRestaurant.bind(this)
   }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   let restaurantId = this.props.params.id;
+  //   fetch(`/api/v1/restaurants/${restaurantId}`)
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     let restaurant = JSON.parse(data.restaurant)
+  //     this.setState({ restaurant: restaurant })
+  //   })
+  //   return this.state.restaurant != nextState.restaurant
+  // }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    let restaurantId = this.props.params.id;
-    fetch(`/api/v1/restaurants/${restaurantId}`)
-    .then(response => response.json())
-    .then(data => {
-      let restaurant = JSON.parse(data.restaurant)
-      this.setState({ restaurant: restaurant })
-    })
-    return this.state.restaurant != nextState.restaurant
-  }
-
-  componentWillMount() {
+  componentDidMount() {
     fetch('/api/v1/users.json', {
       credentials: 'same-origin',
       method: 'GET',
@@ -35,9 +36,10 @@ class RestaurantShowContainer extends React.Component {
     .then(data => {
       this.setState({ current_user: data.user })
     })
+    this.fetchRestaurant()
   }
 
-  componentDidMount() {
+  fetchRestaurant() {
     let restaurantId = this.props.params.id;
     fetch(`/api/v1/restaurants/${restaurantId}`)
     .then(response => response.json())
@@ -49,15 +51,27 @@ class RestaurantShowContainer extends React.Component {
 
   addNewReview(formPayLoad) {
     fetch('/api/v1/reviews', {
+      credentials: 'same-origin',
       method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify(formPayLoad)}
-    )
+    ).then(this.fetchRestaurant)
+  }
+
+  deleteReview(id) {
+    fetch(`/api/v1/reviews/${id}`, {
+      method: 'DELETE'}
+    ).then(() => {this.fetchRestaurant()})
   }
 
   render() {
     let review;
     if(this.state.restaurant.reviews != null) {
-      review = <ReviewIndexContainer reviews={this.state.restaurant.reviews}/>
+      review = <ReviewIndexContainer
+                reviews={this.state.restaurant.reviews}
+                deleteReview={this.deleteReview}
+                current_user={this.state.current_user}
+              />
     }
     return(
       <div>
