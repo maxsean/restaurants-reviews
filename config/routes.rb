@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :reviews
       resources :users
       resources :votes
+      resources :demographics
     end
   end
 
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :homes, only: [:index]
   resources :users
+  resources :charts
   root "homes#index"
 
   get "*path", to: "homes#index"
