@@ -13,6 +13,7 @@ class SearchResultsContainer extends React.Component {
       return(
         <RestaurantTile
           key={restaurant.id}
+          id={restaurant.id}
           name={restaurant.name}
           address={restaurant.address}
           city={restaurant.city}

@@ -28,9 +28,11 @@ class ReviewIndexContainer extends React.Component {
     })
     return(
       <div>
-        <hr />
-        <h2>Reviews</h2>
-        {reviews}
+        <div className="reviewIndexHeader">
+          <hr />
+          <h2>Reviews</h2>
+        </div>
+          {reviews}
       </div>
     )
   }

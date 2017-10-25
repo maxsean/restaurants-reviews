@@ -25,6 +25,7 @@ describe('A test for SearchResultsContainer', () => {
 
   it('a RestaurantTile component have specified props', () => {
     expect(wrapper.find('RestaurantTile').at(0).props()).toEqual({
+      id: 1,
       name: "Panera",
       address: "55 Summer St.",
       city: "Boston",
@@ -42,6 +43,7 @@ describe('A test for SearchResultsContainer', () => {
 
   it('a RestaurantTile component have specified props', () => {
     expect(wrapper.find('RestaurantTile').at(1).props()).toEqual({
+      id: 2,
       name: "Danera",
       address: "85 Summer St.",
       city: "Cambridge",

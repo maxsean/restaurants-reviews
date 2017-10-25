@@ -49,7 +49,7 @@ xdescribe('A test for ReviewTile component', () => {
     expect(wrapper.find('p').at(6).text()).toBe('Cleanliness: 2')
   })
   it('should have the reason of visit', () => {
-    expect(wrapper.find('p').at(7).text()).toBe('Reviewed on Oct 23 2017')
+    expect(wrapper.find('p').at(7).text()).toBe('Reviewed on  Oct 25 2017')
   })
   it('should have the reason of visit', () => {
     expect(wrapper.find('p').at(8).text()).toBe('all 2s')
