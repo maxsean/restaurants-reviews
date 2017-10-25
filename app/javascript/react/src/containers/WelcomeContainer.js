@@ -15,7 +15,6 @@ class WelcomeContainer extends Component {
         <div className="welcome-quote">
           "There are many restaurant review sites. Good lord, there are so many. What is this one? It's got them pie charts. I love pie charts. I love them here. I love them even over there. Yeah."  - Sean, 2017
         </div>
-
         <RestaurantTile
           id={this.props.sample_restaurant.id}
           name={this.props.sample_restaurant.name}

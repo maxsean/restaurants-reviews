@@ -1,5 +1,5 @@
 
-user1 = User.create!(first_name: "Mark", last_name: "Swinimer", username: "mswinimer", email: "mswinimernottaken@gmail.com", password: "123456")
+user1 = User.create!(first_name: "Mark", last_name: "Swinimer", username: "mswinimer", email: "markswinimer@gmail.com", password: "123456")
 
 
 restaurant1 = Restaurant.create!(name: "Panera", address: "55 Summer St.", city: "Boston", state: "MA", zip: "02111", dollar_value: 2,
@@ -10,7 +10,6 @@ restaurant2 = Restaurant.create!(name: "PoopDog", address: "34 Potato St.", city
 
 restaurant3 = Restaurant.create!(name: "Wendy's", address: "75 Summer St.", city: "Boston", state: "MA", zip: "02111", dollar_value: 1,
     description: "Hamburgers", picture: "http://www.nrn.com/sites/nrn.com/files/wendys.gif", phone_number: "1111111111", website_url: "https://www.wendys.com", user: User.first)
-
 
 review1 = Review.create!(restaurant: restaurant1, reason_of_visit: "Sports Event", quality_of_service: 1, noise_level: 1, fits_taste: true, lighting: 1, cleanliness: 2, comment: "This is a review, believe it...", user: user1)
 
@@ -35,3 +34,15 @@ Review.create!(restaurant: restaurant1, reason_of_visit: "Celebration", quality_
 Review.create!(restaurant: restaurant1, reason_of_visit: "Takeout", quality_of_service: 2, noise_level: 1, fits_taste: false, lighting: 1, cleanliness: 3, comment: "This is a review, believe it...", user: user1)
 
 Review.create!(restaurant: restaurant1, reason_of_visit: "Other", quality_of_service: 2, noise_level: 1, fits_taste: true, lighting: 1, cleanliness: 2, comment: "This is a review, believe it...", user: user1)
+
+review_1 = Review.create!(
+  restaurant: restaurant3,
+  reason_of_visit: "Family Party",
+  quality_of_service: 2,
+  noise_level: 1,
+  fits_taste: true,
+  lighting: 2,
+  cleanliness: 3,
+  comment: "I will come back again.",
+  user: user1
+)

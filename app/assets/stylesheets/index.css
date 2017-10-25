@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Oregano');
 
+
+.menu-text a {
+  font-size: 35px;
+  text-decoration: none;
+}
+
+.mainContainer {
+  padding: 10px;
+}
+
 .top-bar {
   background-color: #c84648;
   color: white;
