@@ -8,8 +8,8 @@
 
 
 
-user1 = User.create!(first_name: "Fat", last_name: "Duck", username: "fatduck", email: "fat@duck.com", password: "123456")
-user1 = User.create!(first_name: "Smelly", last_name: "Dog", username: "smellydog", email: "smelly@dog.com", password: "123456", admin: true)
+user1 = User.create!(first_name: "Mimi", last_name: "French", username: "mimifrench", email: "mimi@french.com", password: "123456")
+user1 = User.create!(first_name: "John", last_name: "Smith", username: "johnsmith", email: "john@smith.com", password: "123456", admin: true)
 
 restaurant1 = Restaurant.create!(name: "Panera", address: "55 Summer St.", city: "Boston", state: "MA", zip: "02111", dollar_value: 2,
   description: "Sells bread.", picture: "https://chefservicesgroup.com/wp-content/uploads/2011/12/panera.jpg", phone_number: "3333333333", website_url: "https://www.panerabread.com", user: User.first)

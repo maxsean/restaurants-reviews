@@ -67,7 +67,7 @@ class RestaurantShowContainer extends React.Component {
 
   render() {
     let review;
-    if(this.state.restaurant.reviews != null) {
+    if(this.state.restaurant.reviews != undefined) {
       review = <ReviewIndexContainer
                 reviews={this.state.restaurant.reviews}
                 deleteReview={this.deleteReview}

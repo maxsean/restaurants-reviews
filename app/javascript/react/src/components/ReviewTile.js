@@ -14,36 +14,38 @@ class ReviewTile extends React.Component {
   }
 
   componentDidMount() {
-    let check_state = {
-      user_id: this.props.current_user.id,
-      review_id: this.props.id
-    }
-    fetch('/api/v1/users', {
-      method: "POST",
-      body: JSON.stringify(check_state)
-    })
-    .then(response => response.json())
-    .then(data => {
-      if(data["value"] == -1) {
-        this.setState({
-          disabledUpvote: false,
-          disabledDownvote: true
-        })
-      } else if(data["value"] == 0) {
-        this.setState({
-          disabledUpvote: false,
-          disabledDownvote: false
-        })
-      } else if(data["value"] == 1) {
-        this.setState({
-          disabledUpvote: true,
-          disabledDownvote: false
-        })
+    if (this.props.current_user.id) {
+      let check_state = {
+        user_id: this.props.current_user.id,
+        review_id: this.props.id
       }
-      this.setState({
-        karma: data["karma"]
+      fetch('/api/v1/users', {
+        method: "POST",
+        body: JSON.stringify(check_state)
       })
-    })
+      .then(response => response.json())
+      .then(data => {
+        if(data["value"] == -1) {
+          this.setState({
+            disabledUpvote: false,
+            disabledDownvote: true
+          })
+        } else if(data["value"] == 0) {
+          this.setState({
+            disabledUpvote: false,
+            disabledDownvote: false
+          })
+        } else if(data["value"] == 1) {
+          this.setState({
+            disabledUpvote: true,
+            disabledDownvote: false
+          })
+        }
+        this.setState({
+          karma: data["karma"]
+        })
+      })
+    }
   }
 
   handleUpvoteClicked() {
@@ -112,10 +114,9 @@ class ReviewTile extends React.Component {
 
   render() {
    let date = Date(this.props.created_at).toString().substring(3,15)
-
    let button
-   if (props.current_user.admin) {
-     button = <button onClick={props.handleDelete}>Delete this review</button>
+   if (this.props.current_user.admin) {
+     button = <button onClick={this.props.handleDelete}>Delete this review</button>
    }
    return(
      <div className="review-container">
