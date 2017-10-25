@@ -18,7 +18,7 @@ class ReviewTile extends React.Component {
       user_id: this.props.current_user.id,
       review_id: this.props.id
     }
-    fetch('/api/v1/votes', {
+    fetch('/api/v1/users', {
       method: "POST",
       body: JSON.stringify(check_state)
     })
