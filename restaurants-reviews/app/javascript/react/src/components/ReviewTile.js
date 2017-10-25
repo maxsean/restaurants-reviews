@@ -5,25 +5,23 @@ const ReviewTile = (props) => {
   return(
     <div className="review-container">
       <hr/>
-      <div className="column left">
+      <div className="user-info">
         <p><strong>{props.user.username}</strong></p>
       </div>
-      <div className="column middle">
-        <div className="column middle innerLeft">
+      <div className="review-info">
+        <div className="review-ratings">
           <p><strong>Reason of Visit: </strong>{props.reason_of_visit}</p>
           <p><strong>Quality of Service: </strong>{props.quality_of_service}</p>
           <p><strong>Noise Level: </strong>{props.noise_level}</p>
-        </div>
-        <div className="column middle innerRight">
           <p><strong>Lighting: </strong>{props.lighting}</p>
           <p><strong>Taste: </strong>{props.fits_taste}</p>
           <p><strong>Cleanliness: </strong>{props.cleanliness}</p>
         </div>
-      </div>
-      <div className="column right">
-        <h3>Comment</h3>
-        <p>Reviewed on {date}</p>
-        <p>{props.comment}</p>
+        <div className="review-comment">
+          <h3>Comment</h3>
+          <p>Reviewed on {date}</p>
+          <p>{props.comment}</p>
+        </div>
       </div>
     </div>
   )
