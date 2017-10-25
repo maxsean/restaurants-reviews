@@ -6,8 +6,21 @@ class RestaurantShowContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurant: {}
+      restaurant: {},
+      current_user: {}
     }
+  }
+
+  componentWillMount() {
+    fetch('/api/v1/users.json', {
+      credentials: 'same-origin',
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      this.setState({ current_user: data.user })
+    })
   }
 
   componentDidMount() {
@@ -23,7 +36,10 @@ class RestaurantShowContainer extends React.Component {
   render() {
     let review;
     if(this.state.restaurant.reviews != null) {
-      review = <ReviewIndexContainer reviews={this.state.restaurant.reviews}/>
+      review = <ReviewIndexContainer
+        reviews={this.state.restaurant.reviews}
+        current_user={this.state.current_user}
+      />
     }
     return(
       <div>
