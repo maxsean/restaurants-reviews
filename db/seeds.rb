@@ -20,7 +20,6 @@ restaurant2 = Restaurant.create!(name: "PoopDog", address: "34 Potato St.", city
 restaurant3 = Restaurant.create!(name: "Wendy's", address: "75 Summer St.", city: "Boston", state: "MA", zip: "02111", dollar_value: 1,
     description: "Hamburgers", picture: "http://www.nrn.com/sites/nrn.com/files/wendys.gif", phone_number: "1111111111", website_url: "https://www.wendys.com", user: User.first)
 
-
 review_1 = Review.create!(
   restaurant: restaurant3,
   reason_of_visit: "Family Party",

@@ -8,7 +8,7 @@ import RestaurantShowContainer from './containers/RestaurantShowContainer';
 
 const App = (props) => {
   return(
-    <div>
+    <div className="mainContainer">
       <Router history={browserHistory}>
         <Route path='/'>
           <IndexRoute component={MainContainer} />

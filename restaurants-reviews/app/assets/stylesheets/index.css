@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Oregano');
+
+.top-bar {
+  background-color: #c84648;
+  color: white;
+  margin: 0;
+  padding-right: 30px;
+  padding-left: 20px;
+}
+
+.menu-text {
+  color: white;
+  font-size: 24px;
+  font-family: "Oregano", cursive;
+  padding-left: 20px;
+  display: inline;
+  float: left;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+a {
+  color: white;
+  font-size: 18px;
+  padding-right: 15px;
+  float: right;
+  display: inline;
+}
+
+.welcome-quote {
+  color: white;
+  background-color: #adc0b4;
+  font-size: 30px;
+  line-height: 40px;
+  padding: 40px 200px;
+}
+
+.image-container {
+  /*min-height: 150px;
+  max-height: 150px;*/
+}
+.restaurant-image {
+  float: left;
+  width: 150px;
+  height: 150px;
+  object-position: center;
+  object-fit: cover;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.formContainer {
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.callout {
+  width: 500px;
+  line-height: 28px;
+}
+
+.area {
+  resize: none;
+  min-height: 500;
+  word-wrap: break-word;
+  line-height: 28px;
+  height: 100px;
+}

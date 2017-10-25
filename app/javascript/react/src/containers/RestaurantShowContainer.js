@@ -8,8 +8,9 @@ class RestaurantShowContainer extends React.Component {
     super(props);
     this.state = {
       restaurant: {},
-      current_user: null,
-      review: null
+      user: null,
+      review: null,
+      current_user: {}
     }
     this.addNewReview = this.addNewReview.bind(this)
     this.deleteReview = this.deleteReview.bind(this)
@@ -30,7 +31,7 @@ class RestaurantShowContainer extends React.Component {
     fetch('/api/v1/users.json', {
       credentials: 'same-origin',
       method: 'GET',
-      headers: { 'Content-Type': 'application/json'}
+      headers: { 'Content-Type': 'application/json' }
     })
     .then(response => response.json())
     .then(data => {
