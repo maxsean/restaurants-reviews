@@ -1,10 +1,9 @@
 
-<h3>Hello, this is a d3.js thingy</h3>
+<h3><%= @restaurant.name %> Review Overview</h3>
 
 
 <script>
-
-var margin = {top: 350, right: 480, bottom: 350, left: 480},
+var margin = {top: 480, right: 620, bottom: 480, left: 620},
     radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
 
 function filter_min_arc_size_text(d, i) {return (d.dx*d.depth*radius/3)>14};
@@ -75,7 +74,8 @@ function mouseMoveArc (d) {
 }
 
 var root_ = null;
-d3.json("/api/v1/demographics", function(error, root) {
+id = `${<%= @restaurant.id %>}`;
+d3.json(`/api/v1/demographics/${id}`, function(error, root) {
   if (error) return console.warn(error);
   // Compute the initial layout on the entire tree to sum sizes.
   // Also compute the full name and fill color for each node,

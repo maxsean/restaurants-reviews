@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactFauxDOM from 'react-faux-dom';
-import PieChart from '../containers/PieChart';
 
 const RestaurantTile = (props) => {
 
