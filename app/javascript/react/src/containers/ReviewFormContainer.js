@@ -77,28 +77,28 @@ class ReviewFormContainer extends React.Component {
             handleChange={this.handleChange}
           />
           <RadioButtonField
-            content={this.state.quality_of_service}
+            content={this.state.noise_level}
             label="Noise Level"
             name="noise_level"
             checked={this.state.checked}
             handleChange={this.handleChange}
           />
           <RadioButtonField
-            content={this.state.quality_of_service}
+            content={this.state.lighting}
             label="Lighting"
             name="lighting"
             checked={this.state.checked}
             handleChange={this.handleChange}
           />
           <RadioButtonField
-            content={this.state.quality_of_service}
+            content={this.state.cleanliness}
             label="Cleanliness"
             name="cleanliness"
             checked={this.state.checked}
             handleChange={this.handleChange}
           />
           <RadioBooleanField
-            content={this.state.quality_of_service}
+            content={this.state.fits_taste}
             label="Fits Taste?"
             name="fits_taste"
             checked={this.state.checked}
