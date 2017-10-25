@@ -9,7 +9,8 @@ class RestaurantShowContainer extends React.Component {
     this.state = {
       restaurant: {},
       user: null,
-      review: null
+      review: null,
+      current_user: {}
     }
     this.addNewReview = this.addNewReview.bind(this)
   }
@@ -19,6 +20,18 @@ class RestaurantShowContainer extends React.Component {
       credentials: 'same-origin',
       method: 'GET',
       headers: { 'Content-Type': 'application/json'}
+    })
+    .then(response => response.json())
+    .then(data => {
+      this.setState({ current_user: data.user })
+    })
+  }
+
+  componentWillMount() {
+    fetch('/api/v1/users.json', {
+      credentials: 'same-origin',
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
     })
     .then(response => response.json())
     .then(data => {
@@ -46,7 +59,10 @@ class RestaurantShowContainer extends React.Component {
   render() {
     let review;
     if(this.state.restaurant.reviews != null) {
-      review = <ReviewIndexContainer reviews={this.state.restaurant.reviews}/>
+      review = <ReviewIndexContainer
+        reviews={this.state.restaurant.reviews}
+        current_user={this.state.current_user}
+      />
     }
     return(
       <div>

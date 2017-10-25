@@ -4,12 +4,14 @@ import jasmineEnzyme from 'jasmine-enzyme';
 import ReviewTile from '../../src/components/ReviewTile'
 
 
-describe('A test for ReviewTile component', () => {
+xdescribe('A test for ReviewTile component', () => {
   let wrapper,
-      userExample;
+      userExample,
+      current_userExample;
 
   beforeEach(() => {
     userExample = {username: "Johnny"}
+    current_userExample={ id: 1 }
     wrapper = mount(
       <ReviewTile
         reason_of_visit="outing"
@@ -21,6 +23,7 @@ describe('A test for ReviewTile component', () => {
         comment="all 2s"
         created_at="2017-10-23T19:03:11.057Z"
         user={userExample}
+        current_user={current_userExample}
       />
     )
   })
