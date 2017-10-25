@@ -6,32 +6,7 @@ class WelcomeContainer extends Component {
     super(props);
     this.state = {
     }
-    this.handleClick = this.handleClick.bind(this)
   }
-
-  handleClick() {
-    let body = {
-      review: {id: 1,
-        restaurant_id: 3,
-        reason_of_visit: "Family Party",
-        quality_of_service: 2,
-        noise_level: 1,
-        fits_taste: true,
-        lighting: 2,
-        cleanliness: 3,
-        comment: "I will come back again.",
-        user_id: 1}
-      }
-
-      fetch('/api/v1/reviews', {
-        method: 'POST',
-        body: JSON.stringify(body)
-      })
-      .then(response => response.json())
-      .then(data => {
-      })
-  }
-
 
   render() {
 
@@ -55,8 +30,6 @@ class WelcomeContainer extends Component {
           dining_type={this.props.sample_restaurant.restaurant_dining_type}
           food_type={this.props.sample_restaurant.restaurant_food_type}
         />
-
-        <button onClick={this.handleClick}>Create a review</button>
       </div>
     )
   }

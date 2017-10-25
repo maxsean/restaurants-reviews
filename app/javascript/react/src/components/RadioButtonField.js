@@ -45,6 +45,15 @@ const RadioButtonField = props => {
           onChange={props.handleChange}
         />
         {" "}5{" "}
+        <input
+          type="radio"
+          value={6}
+          className={props.name}
+          checked={props.checked}
+          hidden={true}
+          name={props.name}
+        />
+
       </label>
     </div>
   )

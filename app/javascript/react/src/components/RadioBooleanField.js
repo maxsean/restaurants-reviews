@@ -19,6 +19,14 @@ const RadioBooleanField = props => {
           onChange={props.handleChange}
         />
         {" "}No{" "}
+        <input
+          type="radio"
+          value={false}
+          name={props.name}
+          checked={props.checked}
+          hidden={true}
+          onChange={props.handleChange}
+        />
       </label>
     </div>
   )

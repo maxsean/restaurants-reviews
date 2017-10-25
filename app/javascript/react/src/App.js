@@ -14,8 +14,6 @@ const App = (props) => {
           <IndexRoute component={MainContainer} />
           <Route path='/restaurants/new'
             component={RestaurantsContainer}/>
-          <Route path='/restaurants/:id'
-            component={ReviewFormContainer} />
           <Route path='/restaurants/:id' component={RestaurantShowContainer}/>
         </Route>
       </Router>

@@ -8,19 +8,15 @@ class Api::V1::ReviewsController < ApplicationController
                         fits_taste: body["fits_taste"],
                         lighting: body["lighting"],
                         cleanliness: body["cleanliness"],
-                        comment: body["comment"]
+                        comment: body["comment"],
+                        user_id: body["user_id"],
+                        restaurant_id: body["restaurant_id"]
                        )
-    # user = User.find(body["review"]["user_id"])
-    # UserMailer.new_review_email(user).deliver_now
-    binding.pry
+
+    ReviewMailer.new_review(review).deliver_now
+    
     if review.save
       render json: {review: review}
     end
   end
-
-  private
-    def review_params
-        params.require(:review).permit(:reason_of_visit, :quality_of_service, :noise_level, :lighting,
-          :cleanliness, :fits_taste, :comment)
-    end
 end

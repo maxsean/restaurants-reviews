@@ -21,6 +21,8 @@ RSpec.describe ReviewMailer, type: :mailer do
 
 sign_in_as(user_1)
 
-visit
+visit new_restaurant_review_path(restaurant_1)
+
+fill_in
 
 end
