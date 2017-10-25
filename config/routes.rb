@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :users
+    resources :restaurants
+    resources :reviews
+  end
+
   resources :homes, only: [:index]
   resources :users
   root "homes#index"
