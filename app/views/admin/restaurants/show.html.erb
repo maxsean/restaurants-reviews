@@ -1,13 +1,19 @@
-<h1>Resaurant Detail:</h1>
+<h1 class="admin-header">Resaurant Detail:</h1>
 
-<ul>
-  <li>Name: <%= @restaurant.name %></li>
-  <li>Address: <%= @restaurant.address %>, <%= @restaurant.city %>, <%= @restaurant.state %>, <%= @restaurant.zip %>
-  <li>Dollar Value: <%= @restaurant.dollar_value %></li>
-  <li>Description: <%= @restaurant.description %></li>
-  <li>Picture: <%= @restaurant.picture %></li>
-  <li>Phone: <%= @restaurant.phone_number %></li>
-  <li>URL: <%= @restaurant.website_url %></li>
-</ul>
+<div class="admin-lists">
+    <div class="list-item item">
+      <li>Name: <%= @restaurant.name %></li>
+      <li>Address: <%= @restaurant.address %>, <%= @restaurant.city %>, <%= @restaurant.state %>, <%= @restaurant.zip %>
+      <li>Dollar Value: <%= @restaurant.dollar_value %></li>
+      <li>Description: <%= @restaurant.description %></li>
+      <li>Picture: </li>
+      <li><%= image_tag(@restaurant.picture) %></li>
+      <li>Phone: <%= @restaurant.phone_number %></li>
+      <li>URL: <%= @restaurant.website_url %></li>
+    </div>
+</li>
 
-<%= link_to 'Delete this restaurant', admin_restaurant_path(@restaurant.id), method: :delete %>
+<div class="admin-button">
+  <%= link_to 'Delete this restaurant', admin_restaurant_path(@restaurant.id), method: :delete, id: "admin-delete-button" %>
+  <%= link_to 'Back', admin_restaurants_path, id: "restaurant-show-back-button" %>
+</div>

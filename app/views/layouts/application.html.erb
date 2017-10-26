@@ -43,7 +43,8 @@
                 <%= link_to 'Create New Restaurant', "/restaurants/new" %>
                 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
                 <% if current_user.admin? %>
-                  <%= link_to 'Admin Panel'  %>
+                  <%= link_to 'All restaurants', admin_restaurants_path %>
+                  <%= link_to 'All users', admin_users_path %>
                 <% end %>
                 <%= link_to 'Profile', current_user %>
               <% else %>
