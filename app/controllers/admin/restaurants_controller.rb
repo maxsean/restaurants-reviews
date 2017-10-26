@@ -9,6 +9,11 @@ class Admin::RestaurantsController < AdminController
 
   def destroy
     @restaurant = Restaurant.find(params[:id])
+
+    @restaurant.reviews.each do |review|
+      review.destroy
+    end
+
     @restaurant.destroy
     flash[:notice] = "User deleted"
     redirect_to admin_restaurants_path

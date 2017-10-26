@@ -12,9 +12,11 @@ class Admin::UsersController < AdminController
     @user.reviews.each do |review|
       review.destroy
     end
+
     @user.restaurants.each do |restaurant|
       restaurant.destroy
     end
+
     @user.destroy
     flash[:notice] = "User deleted"
     redirect_to admin_users_path
