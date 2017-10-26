@@ -29,9 +29,9 @@ class RestaurantShowContainer extends React.Component {
     })
     .then(response => response.json())
     .then(data => {
-      this.setState({ current_user: data.user })
+      this.setState({ current_user: data.user });
     })
-    this.fetchRestaurant()
+    .then(this.fetchRestaurant())
   }
 
   fetchRestaurant() {
@@ -99,6 +99,7 @@ class RestaurantShowContainer extends React.Component {
         reviews = <ReviewIndexContainer
           reviews={this.state.reviews}
           current_user={this.state.current_user}
+          deleteReview={this.deleteReview}
         />
       }
       container =

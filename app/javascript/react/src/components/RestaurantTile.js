@@ -6,7 +6,7 @@ const RestaurantTile = (props) => {
   dollar_value = num.map(n => {
     if (n <= props.dollar_value) {
       return (
-        <i className="fa fa-usd" aria-hidden="true"></i>
+        <i key={n} className="fa fa-usd" aria-hidden="true"></i>
       )
     }
   })
@@ -15,13 +15,12 @@ const RestaurantTile = (props) => {
     <div className="restaurant-tile">
       <div className=" column restaurantLeft">
         <div className="image-container">
-          <a href={`/restaurants/${props.id}`}>
-          <img className="restaurant-image" src={props.picture} alt="A picture of the Restaurant"></img></a>
+          <a href={`/restaurants/${props.id}`}><img className="restaurant-image" src={props.picture} alt="A picture of the Restaurant"></img></a>
         </div>
       </div>
       <div className="column restaurantRight">
         <div className="column restaurantLeft restaurantDataLeft">
-          <div className= "nameStrong"><a href={`/restaurants/${props.id}`}>{props.name}</a></div>
+          <a href={`/restaurants/${props.id}`}><div className= "nameStrong">{props.name}</div></a>
             <div className="dollarValue">PRICE: {dollar_value}</div>
             <div className="contactLabel">
             <p><strong>Address: </strong>{props.address}</p>

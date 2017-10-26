@@ -41,7 +41,7 @@ class MainContainer extends React.Component {
   render() {
     let container;
     if (this.state.search === true) {
-      container = <SearchResultsContainer restaurants={this.state.search_results}/>
+      container = <div><BackButton/><SearchResultsContainer restaurants={this.state.search_results}/></div>
     } else {
       container = <WelcomeContainer sample_restaurant={this.state.sample_restaurant}/>
     }
@@ -55,7 +55,6 @@ class MainContainer extends React.Component {
             />
           </div>
         </div>
-        <BackButton/>
         {container}
       </div>
     )
