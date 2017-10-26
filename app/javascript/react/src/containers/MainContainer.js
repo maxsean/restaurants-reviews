@@ -12,7 +12,6 @@ class MainContainer extends React.Component {
       search_results: {},
       search: false
     }
-    //bind
     this.makeNewSearch = this.makeNewSearch.bind(this)
   }
 

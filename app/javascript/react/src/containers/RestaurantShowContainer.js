@@ -17,23 +17,25 @@ class RestaurantShowContainer extends React.Component {
       search_results: {},
       search: false
     }
-    this.addNewReview = this.addNewReview.bind(this);
-    this.makeNewSearch = this.makeNewSearch.bind(this)
+    this.addNewReview = this.addNewReview.bind(this)
+    this.deleteReview = this.deleteReview.bind(this)
+    this.fetchRestaurant = this.fetchRestaurant.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch('/api/v1/users.json', {
       credentials: 'same-origin',
       method: 'GET',
-      headers: { 'Content-Type': 'application/json'}
+      headers: { 'Content-Type': 'application/json' }
     })
     .then(response => response.json())
     .then(data => {
       this.setState({ current_user: data.user })
     })
+    this.fetchRestaurant()
   }
 
-  componentDidMount() {
+  fetchRestaurant() {
     let restaurantId = this.props.params.id;
     fetch(`/api/v1/restaurants/${restaurantId}`)
     .then(response => response.json())
@@ -46,7 +48,9 @@ class RestaurantShowContainer extends React.Component {
 
   addNewReview(formPayLoad) {
     fetch('/api/v1/reviews', {
+      credentials: 'same-origin',
       method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify(formPayLoad)}
     )
     .then(response => response.json())
@@ -70,14 +74,30 @@ class RestaurantShowContainer extends React.Component {
     })
   }
 
+  deleteReview(id) {
+    fetch(`/api/v1/reviews/${id}`, {
+      method: 'DELETE'}
+    ).then(() => {this.fetchRestaurant()})
+  }
+
   render() {
     let container;
+    let reviewForm;
+    if(this.state.current_user.id){
+      reviewForm =
+      <ReviewFormContainer
+        review={this.state.review}
+        addNewReview={this.addNewReview}
+        current_user={this.state.current_user}
+        restaurant_id={this.props.params.id}
+      />
+    }
     if (this.state.search === true) {
       container = <SearchResultsContainer restaurants={this.state.search_results}/>
     } else {
-      let review;
+      let reviews;
       if(this.state.restaurant.reviews != null) {
-        review = <ReviewIndexContainer
+        reviews = <ReviewIndexContainer
           reviews={this.state.reviews}
           current_user={this.state.current_user}
         />
@@ -99,13 +119,8 @@ class RestaurantShowContainer extends React.Component {
           dining_type={this.state.restaurant.restaurant_dining_type}
           food_type={this.state.restaurant.restaurant_food_type}
         />
-        <ReviewFormContainer
-          review={this.state.review}
-          addNewReview={this.addNewReview}
-          current_user={this.state.current_user}
-          restaurant_id={this.props.params.id}
-        />
-        review
+        {reviewForm}
+        {reviews}
     </div>
     }
     return(

@@ -7,10 +7,14 @@ class ReviewIndexContainer extends React.Component {
     this.state = {
       reviews: {}
     }
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ reviews: nextProps.reviews });  
+    this.setState({ reviews: nextProps.reviews });
+  }
+  handleDelete(id) {
+    this.props.deleteReview(id)
   }
 
   render() {
@@ -28,6 +32,7 @@ class ReviewIndexContainer extends React.Component {
           comment={review.comment}
           created_at={review.created_at}
           user={review.user}
+          handleDelete={() => this.handleDelete(review.id)}
           current_user={this.props.current_user}
         />
       )
