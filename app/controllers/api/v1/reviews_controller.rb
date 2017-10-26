@@ -19,12 +19,8 @@ class Api::V1::ReviewsController < ApplicationController
      )
 
     if review.save
-<<<<<<< HEAD
 
       # ReviewMailer.new_review(review).deliver_now
-=======
-      ReviewMailer.new_review(review).deliver_now
->>>>>>> master
       render json: {review: review}
     end
   end
