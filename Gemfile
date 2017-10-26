@@ -13,6 +13,7 @@ gem 'carrierwave', '1.2.0'
 gem 'fog'
 gem 'mini_magick'
 gem 'figaro'
+gem 'font-awesome-sass', '~> 4.7.0'
 
 
 group :development do

@@ -49,24 +49,24 @@ class ReviewTile extends React.Component {
   }
 
   handleUpvoteClicked() {
-   if (!this.state.disabledUpvote) {
-     this.setState({
-       disabledUpvote: true,
-       disabledDownvote: false
-     });
-     let vote = {
-       user_id: this.props.current_user.id,
-       review_id: this.props.id,
-       value: 1
-     }
-     fetch('/api/v1/votes', {
-       method: "POST",
-       body: JSON.stringify(vote)}
-     )
-     .then(response => response.json())
-     .then(data => {
-       this.setState({karma: data["karma"]})
-     })
+    if (!this.state.disabledUpvote) {
+      this.setState({
+        disabledUpvote: true,
+        disabledDownvote: false
+      });
+      let vote = {
+        user_id: this.props.current_user.id,
+        review_id: this.props.id,
+        value: 1
+      }
+      fetch('/api/v1/votes', {
+        method: "POST",
+        body: JSON.stringify(vote)}
+      )
+      .then(response => response.json())
+      .then(data => {
+        this.setState({karma: data["karma"]})
+      })
     }
   }
 
@@ -110,6 +110,24 @@ class ReviewTile extends React.Component {
     .then(data => {
       this.setState({karma: data["karma"]})
     })
+  }
+
+  bubbler(value) {
+    let num = [1,2,3,4,5]
+    let bubbles = num.map(n => {
+      if (n <= value) {
+        return (
+          <i class="fa fa-circle" aria-hidden="true"></i>
+        )
+      } else {
+        return (
+          <i class="fa fa-circle-o" aria-hidden="true"></i>
+        )
+      }
+    })
+    return(
+      bubbles
+    )
   }
 
   render() {
@@ -167,4 +185,4 @@ class ReviewTile extends React.Component {
   }
 }
 
-export default ReviewTile;
+      export default ReviewTile;

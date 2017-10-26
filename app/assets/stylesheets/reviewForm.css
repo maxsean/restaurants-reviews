@@ -1,0 +1,21 @@
+.reviewFormContainer {
+  border-left: 5px solid #E7EDEA;
+  border-right: 5px solid #E7EDEA;
+  height: 625px;
+  width: 550px;
+  background-color: #F6F6F6;
+  border-top: .25px solid silver;
+  border-bottom: .25px solid silver;
+  border-radius: 5px;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 2px 2px 9px 0px #888888;
+}
+.column {
+  float: left;
+}
