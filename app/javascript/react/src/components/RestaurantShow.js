@@ -22,11 +22,12 @@ const RestaurantShow = (props) => {
         <div className="column restaurantLeft restaurantDataLeft">
           <div className= "nameStrong">{props.name}</div>
             <div className="dollarValue">PRICE: {dollar_value}</div>
-            <div className="contactLabel">Contact Info</div>
+            <div className="contactLabel">
             <p><strong>Address: </strong>{props.address}</p>
             <p><strong>City: </strong>{props.city}</p>
             <p><strong>State: </strong>{props.state}</p>
             <p><strong>Zip: </strong>{props.zip}</p>
+          </div>
         </div>
         <div className="column restaurantRight restaurantDataRight">
           <p><strong>Description: </strong>{props.description}</p>
