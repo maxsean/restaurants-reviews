@@ -63,3 +63,79 @@ review4_3 = Review.create!(restaurant: restaurant4, reason_of_visit: "Dinner", q
 review4_4 = Review.create!(restaurant: restaurant4, reason_of_visit: "Celebration", quality_of_service: 5, noise_level: 2, fits_taste: true, lighting: 4, cleanliness: 5, comment: "Mother's day brunch buffet, lovely views and setting", user: user4)
 
 review4_5 = Review.create!(restaurant: restaurant4, reason_of_visit: "Date", quality_of_service: 5, noise_level: 2, fits_taste: true, lighting: 3, cleanliness: 5, comment: "My girlfriend and I came here for drinks on the patio recently. The staff was very friendly, and we had no trouble getting a table for just drinks during dinner hours. The beer list is very limited, but the mixed drinks make up for it. Prices weren't out of line given the location (~$15/cocktail), and I would say the drinks were worth it. The patio has fire space heaters, and we would come back again in the future.", user: user5)
+
+vote1_1_2 = Vote.create!(user: user1, review: review1_2, value: 1)
+
+vote1_1_3 = Vote.create!(user: user1, review: review1_3, value: 1)
+
+vote1_1_5 = Vote.create!(user: user1, review: review1_5, value: -1)
+
+vote1_2_2 = Vote.create!(user: user1, review: review2_2, value: -1)
+
+vote1_2_4 = Vote.create!(user: user1, review: review2_4, value: 1)
+
+vote1_2_5 = Vote.create!(user: user1, review: review2_5, value: 0)
+
+vote1_3_2 = Vote.create!(user: user1, review: review3_2, value: 1)
+
+vote1_3_3 = Vote.create!(user: user1, review: review3_3, value: -1)
+
+vote1_4_2 = Vote.create!(user: user1, review: review4_2, value: 0)
+
+vote1_4_3 = Vote.create(user: user1, review: review4_3, value: 1)
+
+vote1_4_4 = Vote.create!(user: user1, review: review4_4, value: -1)
+
+vote1_4_5 = Vote.create!(user: user1, review: review4_5, value: -1)
+
+vote2_1_3 = Vote.create!(user: user2, review: review1_3, value: 1)
+
+vote2_1_4 = Vote.create!(user: user2, review: review1_4, value: -1)
+
+vote2_1_5 = Vote.create!(user: user2, review: review1_5, value: 1)
+
+vote2_2_1 = Vote.create!(user: user2, review: review2_1, value: -1)
+
+vote2_2_5 = Vote.create!(user: user2, review: review2_5, value: 1)
+
+vote2_3_1 = Vote.create!(user: user2, review: review3_1, value: 0)
+
+vote2_3_3 = Vote.create!(user: user2, review: review3_3, value: 1)
+
+vote2_3_5 = Vote.create!(user: user2, review: review3_5, value: -1)
+
+vote2_4_3 = Vote.create!(user: user2, review: review4_3, value: 1)
+
+vote3_1_2 = Vote.create!(user: user3, review: review1_2, value: -1)
+
+vote3_1_4 = Vote.create!(user: user3, review: review1_4, value: -1)
+
+vote3_1_5 = Vote.create!(user: user3, review: review1_5, value: 1)
+
+vote3_2_2 = Vote.create!(user: user3, review: review2_2, value: -1)
+
+vote3_2_5 = Vote.create!(user: user3, review: review2_5, value: 1)
+
+vote3_3_5 = Vote.create!(user:user3, review: review3_5, value: -1)
+
+vote3_4_2 = Vote.create!(user: user3, review: review4_2, value: 1)
+
+vote3_4_5 = Vote.create!(user: user3, review: review4_5, value: -1)
+
+vote4_1_2 = Vote.create!(user: user4, review: review1_2, value: 1)
+
+vote4_2_2 = Vote.create!(user: user4, review: review2_2, value: -1)
+
+vote4_2_5 = Vote.create!(user: user4, review: review2_5, value: 1)
+
+vote4_3_3 = Vote.create!(user: user4, review: review3_3, value: -1)
+
+vote4_4_3 = Vote.create!(user: user4, review: review4_3, value: 1)
+
+vote5_1_2 = Vote.create!(user: user5, review: review1_2, value: 1)
+
+vote5_2_2 = Vote.create!(user: user5, review: review2_2, value: -1)
+
+vote5_3_1 = Vote.create(user: user5, review: review3_1, value: 1)
+
+vote5_4_3 = Vote.create!(user: user5, review: review4_3, value: 1)
