@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import TextInputField from '../components/TextInputField'
-import TextAreaField from '../components/TextAreaField'
+import TextInputField from '../components/TextInputField';
+import TextAreaField from '../components/TextAreaField';
 
 class RestaurantFormContainer extends Component {
   constructor(props) {

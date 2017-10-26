@@ -2,6 +2,7 @@ import React from 'react'
 import WelcomeContainer from './WelcomeContainer'
 import SearchFormContainer from './SearchFormContainer'
 import SearchResultsContainer from './SearchResultsContainer'
+import BackButton from '../components/BackButton'
 
 class MainContainer extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class MainContainer extends React.Component {
         <SearchFormContainer
           makeNewSearch = {this.makeNewSearch}
         />
+        <BackButton/>
         {container}
       </div>
     )

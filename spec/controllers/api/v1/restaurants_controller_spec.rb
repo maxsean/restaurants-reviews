@@ -28,7 +28,7 @@ RSpec.describe Api::V1::RestaurantsController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 
-      expect(returned_json.length).to eq 1
+      expect(returned_json.length).to eq 2
       expect(expected_json["name"]).to eq "Panera"
       expect(expected_json["city"]).to eq "Boston"
       expect(expected_json["dollar_value"]).to eq 2
@@ -44,7 +44,7 @@ RSpec.describe Api::V1::RestaurantsController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 
-      expect(returned_json.length).to eq 1
+      expect(returned_json.length).to eq 2
       expect(expected_json["name"]).to eq "Panera"
       expect(expected_json["city"]).to eq "Boston"
       expect(expected_json["dollar_value"]).to eq 2

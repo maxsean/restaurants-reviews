@@ -1,8 +1,40 @@
 
-<h3><%= @restaurant.name %> Review Overview</h3>
+<style>
+  circle,
+  path {
+    cursor: pointer;
+  }
+
+  circle {
+    fill: none;
+    pointer-events: all;
+  }
+
+  #tooltip { background-color: white;
+        padding: 3px 5px;
+        border: 1px solid black;
+        text-align: center;}
+
+  html {
+    font-family: sans-serif;
+  }
+
+  h3 {
+    text-align: left;
+  }
+
+  button {
+
+  }
+</style>
+
+
+
+<h3><%= @restaurant.name %> </h3>
 
 <button><a href="/restaurants/<%= @restaurant.id %>">Go To Restaurant</a></button>
 
+<div class="d3chart">
 <script>
 var margin = {top: 480, right: 620, bottom: 480, left: 620},
     radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
@@ -247,3 +279,4 @@ function updateArc(d) {
 d3.select(self.frameElement).style("height", margin.top + margin.bottom + "px");
 
 </script>
+</div>

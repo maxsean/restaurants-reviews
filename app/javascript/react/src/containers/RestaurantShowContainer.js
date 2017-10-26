@@ -2,6 +2,9 @@ import React from 'react';
 import RestaurantShow from '../components/RestaurantShow';
 import ReviewIndexContainer from './ReviewIndexContainer';
 import ReviewFormContainer from './ReviewFormContainer';
+import BackButton from '../components/BackButton';
+import SearchFormContainer from './SearchFormContainer';
+import SearchResultsContainer from './SearchResultsContainer'
 
 class RestaurantShowContainer extends React.Component {
   constructor(props) {
@@ -9,10 +12,13 @@ class RestaurantShowContainer extends React.Component {
     this.state = {
       restaurant: {},
       user: null,
-      review: null,
-      current_user: {}
+      reviews: {},
+      current_user: {},
+      search_results: {},
+      search: false
     }
-    this.addNewReview = this.addNewReview.bind(this)
+    this.addNewReview = this.addNewReview.bind(this);
+    this.makeNewSearch = this.makeNewSearch.bind(this)
   }
 
   componentWillMount() {
@@ -33,7 +39,8 @@ class RestaurantShowContainer extends React.Component {
     .then(response => response.json())
     .then(data => {
       let restaurant = JSON.parse(data.restaurant)
-      this.setState({ restaurant: restaurant })
+      let reviews = JSON.parse(data.reviews)
+      this.setState({ restaurant: restaurant, reviews: reviews })
     })
   }
 
@@ -42,17 +49,40 @@ class RestaurantShowContainer extends React.Component {
       method: 'POST',
       body: JSON.stringify(formPayLoad)}
     )
+    .then(response => response.json())
+    .then(data => {
+      let reviews = JSON.parse(data.reviews)
+      this.setState({reviews: reviews})
+    })
+  }
+
+  makeNewSearch(newSearch) {
+    fetch('/api/v1/searches', {
+      method: "POST",
+      body: JSON.stringify(newSearch)}
+    )
+    .then(response => response.json())
+    .then(body => {
+      this.setState({
+        search_results: body.restaurant,
+        search: true
+      })
+    })
   }
 
   render() {
-    let review;
-    if(this.state.restaurant.reviews != null) {
-      review = <ReviewIndexContainer
-        reviews={this.state.restaurant.reviews}
-        current_user={this.state.current_user}
-      />
-    }
-    return(
+    let container;
+    if (this.state.search === true) {
+      container = <SearchResultsContainer restaurants={this.state.search_results}/>
+    } else {
+      let review;
+      if(this.state.restaurant.reviews != null) {
+        review = <ReviewIndexContainer
+          reviews={this.state.reviews}
+          current_user={this.state.current_user}
+        />
+      }
+      container =
       <div>
         <RestaurantShow
           id={this.state.restaurant.id}
@@ -75,7 +105,16 @@ class RestaurantShowContainer extends React.Component {
           current_user={this.state.current_user}
           restaurant_id={this.props.params.id}
         />
-        {review}
+        review
+    </div>
+    }
+    return(
+      <div>
+        <SearchFormContainer
+          makeNewSearch = {this.makeNewSearch}
+        />
+        <BackButton/>
+        {container}
       </div>
     )
   }

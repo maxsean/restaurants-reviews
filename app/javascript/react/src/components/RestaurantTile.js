@@ -4,10 +4,12 @@ const RestaurantTile = (props) => {
   return(
     <div className="restaurant-tile">
       <div className="image-container">
+        <a href={`/restaurants/${props.id}`}>
         <img className="restaurant-image" src={props.picture} alt="A picture of the Restaurant"></img>
+        </a>
       </div>
       <div>
-        <p><strong>{props.name}</strong></p>
+        <p><a href={`/restaurants/${props.id}`} style={{color:"#000"}}>{props.name}</a></p>
         <p><strong>Address: </strong>{props.address}</p>
         <p><strong>City: </strong>{props.city}</p>
         <p><strong>State: </strong>{props.state}</p>

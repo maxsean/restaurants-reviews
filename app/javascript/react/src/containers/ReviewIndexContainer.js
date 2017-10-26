@@ -5,8 +5,14 @@ class ReviewIndexContainer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      reviews: {}
     }
   }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ reviews: nextProps.reviews });  
+  }
+
   render() {
     let reviews = this.props.reviews.map(review => {
       return(
