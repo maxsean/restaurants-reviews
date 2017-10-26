@@ -13,10 +13,11 @@ class RestaurantShowContainer extends React.Component {
       current_user: {}
     }
     this.addNewReview = this.addNewReview.bind(this)
+    this.deleteReview = this.deleteReview.bind(this)
+    this.fetchRestaurant = this.fetchRestaurant.bind(this)
   }
 
-
-  componentWillMount() {
+  componentDidMount() {
     fetch('/api/v1/users.json', {
       credentials: 'same-origin',
       method: 'GET',
@@ -26,9 +27,10 @@ class RestaurantShowContainer extends React.Component {
     .then(data => {
       this.setState({ current_user: data.user })
     })
+    this.fetchRestaurant()
   }
 
-  componentDidMount() {
+  fetchRestaurant() {
     let restaurantId = this.props.params.id;
     fetch(`/api/v1/restaurants/${restaurantId}`)
     .then(response => response.json())
@@ -40,18 +42,27 @@ class RestaurantShowContainer extends React.Component {
 
   addNewReview(formPayLoad) {
     fetch('/api/v1/reviews', {
+      credentials: 'same-origin',
       method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify(formPayLoad)}
-    )
+    ).then(this.fetchRestaurant)
+  }
+
+  deleteReview(id) {
+    fetch(`/api/v1/reviews/${id}`, {
+      method: 'DELETE'}
+    ).then(() => {this.fetchRestaurant()})
   }
 
   render() {
     let review;
-    if(this.state.restaurant.reviews != null) {
+    if(this.state.restaurant.reviews != undefined) {
       review = <ReviewIndexContainer
-        reviews={this.state.restaurant.reviews}
-        current_user={this.state.current_user}
-      />
+                reviews={this.state.restaurant.reviews}
+                deleteReview={this.deleteReview}
+                current_user={this.state.current_user}
+              />
     }
     return(
       <div>
