@@ -19,3 +19,24 @@ text-shadow: 2px 2px black;
 margin-left: 15px;
 color: white;
 }
+
+/*#user_avatar{
+  background: #cc0000;
+  background: -webkit-linear-gradient(#cc0000, #e06666);
+  background: linear-gradient(#cc0000, #e06666);
+  border: 1px solid #444444;
+  border-radius: 5px;
+  box-shadow: 0 1px #444444;
+  padding: 8px 20px;
+  display: inline-block;
+  font: normal 700 15px/1 "Ubuntu", sans-serif;
+  text-shadow: 1px 1px #000000;
+  text-shadow: 2px 2px black;
+  margin-left: 15px;
+  color: white;
+  position: relative;
+}*/
+
+/*.carrier-wave-field [type="file"] {
+  border: 3px solid green;
+}*/

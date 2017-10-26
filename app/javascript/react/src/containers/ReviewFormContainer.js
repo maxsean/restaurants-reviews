@@ -111,7 +111,7 @@ class ReviewFormContainer extends React.Component {
             handleChange={this.handleChange}
           />
           <div className='button-group'>
-            <input className='button' type='submit' value='Submit' />
+            <button className='button' onClick={this.handleSubmit}>Submit</button>
           </div>
         </form>
       </div>
