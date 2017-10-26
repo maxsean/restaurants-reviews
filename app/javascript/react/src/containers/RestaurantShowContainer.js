@@ -16,17 +16,7 @@ class RestaurantShowContainer extends React.Component {
     this.deleteReview = this.deleteReview.bind(this)
     this.fetchRestaurant = this.fetchRestaurant.bind(this)
   }
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   let restaurantId = this.props.params.id;
-  //   fetch(`/api/v1/restaurants/${restaurantId}`)
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     let restaurant = JSON.parse(data.restaurant)
-  //     this.setState({ restaurant: restaurant })
-  //   })
-  //   return this.state.restaurant != nextState.restaurant
-  // }
-
+  
   componentDidMount() {
     fetch('/api/v1/users.json', {
       credentials: 'same-origin',
