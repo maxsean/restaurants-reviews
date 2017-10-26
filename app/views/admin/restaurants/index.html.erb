@@ -1,0 +1,14 @@
+<h1 class="admin-header">All Restaurants:</h1>
+
+<div class="admin-lists">
+  <% @restaurants.each do |restaurant| %>
+    <div class="list-item">
+      <li><%= link_to restaurant.name, admin_restaurant_path(restaurant) %></li>
+      <li><%= restaurant.address %>, <%= restaurant.city %>, <%= restaurant.state %>, <%= restaurant.zip %></li>
+    </div>
+  <% end %>
+</div>
+
+<div class="admin-button">
+  <%= link_to 'Back', root_path %>
+</div>

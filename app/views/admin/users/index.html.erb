@@ -1,0 +1,14 @@
+<h1 class="admin-header">All Users:</h1>
+
+<div class="admin-lists">
+  <% @users.each do |user|%>
+    <div class="list-item">
+      <li>Username: <%= link_to user.username, admin_user_path(user) %></li>
+      <li>Name:<%= user.first_name %> <%= user.last_name %></li>
+    </div>
+  <% end %>
+</div>
+
+<div class="admin-button">
+  <%= link_to 'Back', root_path %>
+</div>
