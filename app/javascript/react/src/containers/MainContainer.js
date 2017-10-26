@@ -45,10 +45,15 @@ class MainContainer extends React.Component {
       container = <WelcomeContainer sample_restaurant={this.state.sample_restaurant}/>
     }
     return(
-      <div>
-        <SearchFormContainer
-          makeNewSearch = {this.makeNewSearch}
-        />
+      <div className="welcomeContainer">
+        <div className="searchContainer">
+          <div className="searchBar">
+
+            <SearchFormContainer
+              makeNewSearch = {this.makeNewSearch}
+            />
+          </div>
+        </div>
         {container}
       </div>
     )

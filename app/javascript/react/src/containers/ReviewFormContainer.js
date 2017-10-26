@@ -3,6 +3,7 @@ import TextInputField from '../components/TextInputField'
 import TextAreaField from '../components/TextAreaField'
 import RadioButtonField from '../components/RadioButtonField'
 import RadioBooleanField from '../components/RadioBooleanField'
+import DropMenuComponent from '../components/DropMenuComponent'
 
 class ReviewFormContainer extends React.Component {
   constructor(props) {
@@ -60,9 +61,8 @@ class ReviewFormContainer extends React.Component {
   render() {
     return(
       <div className="reviewFormContainer">
-        <hr />
         <form className='callout' onSubmit={this.handleSubmit}>
-          <TextInputField
+          <DropMenuComponent
             content={this.state.reason_of_visit}
             label="Reason of visit: "
             name="reason_of_visit"
