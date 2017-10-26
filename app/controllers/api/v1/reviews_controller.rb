@@ -1,5 +1,9 @@
 class Api::V1::ReviewsController < ApplicationController
 
+  def index
+    render json: { reviews: Review.all }
+  end
+
   def create
     body = JSON.parse(request.body.read)
     review = Review.new(
@@ -15,9 +19,20 @@ class Api::V1::ReviewsController < ApplicationController
      )
 
     if review.save
+<<<<<<< HEAD
 
       # ReviewMailer.new_review(review).deliver_now
+=======
+      ReviewMailer.new_review(review).deliver_now
+>>>>>>> master
       render json: {review: review}
     end
   end
+
+  def destroy
+    review = Review.find(params[:id])
+    review.destroy
+  end
+
+
 end

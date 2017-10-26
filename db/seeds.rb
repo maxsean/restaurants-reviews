@@ -1,7 +1,12 @@
 
+<<<<<<< HEAD
 user1 = User.create!(first_name: "John", last_name: "Smith", username: "jsmith", email: "john.smith@gmail.com", password: "123456")
 
 user2 = User.create!(first_name: "Jill", last_name: "Jones", username: "jill.j", email: "jill.jones@gmail.com", password: "654321")
+=======
+user1 = User.create!(first_name: "Mimi", last_name: "French", username: "mimifrench", email: "mimi@french.com", password: "123456")
+user1 = User.create!(first_name: "John", last_name: "Smith", username: "johnsmith", email: "john@smith.com", password: "123456", admin: true)
+>>>>>>> master
 
 user3 = User.create!(first_name: "Franklin", last_name: "Brown", username: "b_frank", email: "frank_brown@gmail.com", password: "121212")
 
