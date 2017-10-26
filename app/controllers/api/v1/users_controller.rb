@@ -5,6 +5,7 @@ class Api::V1::UsersController < ApplicationController
       render json: { user: current_user }
     else
       render json: { user: nil }
+    end
   end
 
   def create

@@ -5,7 +5,6 @@ import TextAreaField from '../components/TextAreaField'
 class RestaurantFormContainer extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       name: '',
       address: '',
@@ -48,20 +47,23 @@ class RestaurantFormContainer extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let formPayLoad = {
-      name: this.state.name,
-      address: this.state.address,
-      city: this.state.city,
-      state: this.state.state,
-      zip: this.state.zip,
-      dollar_value: parseInt(this.state.dollar_value, 10),
-      description: this.state.description,
-      picture: this.state.picture,
-      phone_number: this.state.phone_number,
-      website_url: this.state.website_url
-    }
+    if (this.props.current_user) {
+      let formPayLoad = {
+        name: this.state.name,
+        address: this.state.address,
+        city: this.state.city,
+        state: this.state.state,
+        zip: this.state.zip,
+        dollar_value: parseInt(this.state.dollar_value, 10),
+        description: this.state.description,
+        picture: this.state.picture,
+        phone_number: this.state.phone_number,
+        website_url: this.state.website_url,
+        user_id: this.props.current_user.id
+      }
     this.props.addNewRestaurant(formPayLoad);
     this.handleClearForm(event);
+    }
   }
 
   render(){
