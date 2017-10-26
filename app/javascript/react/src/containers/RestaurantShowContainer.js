@@ -16,7 +16,6 @@ class RestaurantShowContainer extends React.Component {
     this.deleteReview = this.deleteReview.bind(this)
     this.fetchRestaurant = this.fetchRestaurant.bind(this)
   }
-  
   componentDidMount() {
     fetch('/api/v1/users.json', {
       credentials: 'same-origin',
