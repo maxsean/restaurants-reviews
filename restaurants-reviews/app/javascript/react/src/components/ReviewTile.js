@@ -4,7 +4,6 @@ const ReviewTile = (props) => {
   let date = Date(props.created_at).toString().substring(3,15)
   return(
     <div className="review-container">
-      <hr/>
       <div className="user-info">
         <p><strong>{props.user.username}</strong></p>
       </div>

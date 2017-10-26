@@ -49,6 +49,7 @@ class MainContainer extends React.Component {
       <div className="welcomeContainer">
         <div className="searchContainer">
           <div className="searchBar">
+
             <SearchFormContainer
               makeNewSearch = {this.makeNewSearch}
             />

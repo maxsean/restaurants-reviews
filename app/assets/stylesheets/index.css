@@ -7,12 +7,16 @@
 }
 
 .mainContainer {
+  background-color: white;
 }
 
 .top-bar {
   background-color: #c84648;
+  border-bottom: 10px solid #FFC52C;
   color: white;
   margin: 0;
+  height: 8vh;
+  padding-top: 5px;
   padding-right: 30px;
   padding-left: 20px;
 }
@@ -42,20 +46,6 @@ a {
   font-size: 30px;
   line-height: 40px;
   padding: 40px 200px;
-}
-
-.image-container {
-  /*min-height: 150px;
-  max-height: 150px;*/
-}
-.restaurant-image {
-  float: left;
-  width: 150px;
-  height: 150px;
-  object-position: center;
-  object-fit: cover;
-  margin-left: 15px;
-  margin-right: 15px;
 }
 
 .formContainer {
