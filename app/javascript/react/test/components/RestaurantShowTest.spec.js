@@ -24,39 +24,39 @@ describe('RestaurantShow', () => {
   });
 
   it('should have name of restaurant', () => {
-    expect(wrapper.find('p').at(0).text()).toBe('Testaurant');
+    expect(wrapper.find('div.nameStrong').at(0).text()).toBe('Testaurant');
   });
 
   it('should have address of restaurant', () => {
-    expect(wrapper.find('p').at(1).text()).toBe('Address: test street');
+    expect(wrapper.find('p').at(0).text()).toBe('Address: test street');
   });
 
   it('should have city of restaurant', () => {
-    expect(wrapper.find('p').at(2).text()).toBe('City: test city');
+    expect(wrapper.find('p').at(1).text()).toBe('City: test city');
   });
 
   it('should have state of restaurant', () => {
-    expect(wrapper.find('p').at(3).text()).toBe('State: test state');
+    expect(wrapper.find('p').at(2).text()).toBe('State: test state');
   });
 
   it('should have zipcode of restaurant', () => {
-    expect(wrapper.find('p').at(4).text()).toBe('Zip: 00000');
+    expect(wrapper.find('p').at(3).text()).toBe('Zip: 00000');
   });
 
   it('should have pricing of restaurant', () => {
-    expect(wrapper.find('p').at(5).text()).toBe('Pricing: 1');
+    expect(wrapper.find('div.dollarValue').text()).toBe('PRICE: ');
   });
 
   it('should have description of restaurant', () => {
-    expect(wrapper.find('p').at(6).text()).toBe('Description: my favorite description');
+    expect(wrapper.find('p').at(4).text()).toBe('Description: my favorite description');
   });
 
   it('should have phone number of restaurant', () => {
-    expect(wrapper.find('p').at(7).text()).toBe('Phone Number: 00000');
+    expect(wrapper.find('p').at(5).text()).toBe('Phone Number: 00000');
   });
 
   it('should have website url of restaurant', () => {
-    expect(wrapper.find('p').at(8).text()).toBe('Website: www.test.fake');
+    expect(wrapper.find('p').at(6).text()).toBe('Website: www.test.fake');
   });
 
   it('should have image of restaurant', () => {
