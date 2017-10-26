@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.welcomeContainer {
+
+}
+
+.searchContainer {
+  background-image: url("https://static1.squarespace.com/static/52a1d2c1e4b07ac79d024779/t/573a44af40261dc86d95adcf/1463436468331/Dark+Brown+Table+Background+-+Shutterstock+-+Large.jpg?format=1500w");
+  background-color: red;
+}
+
+.searchBar {
+  height: 30vh;
+  padding-top: 8vh;
+  width: 40vw;
+  margin:  0 auto;
+}
