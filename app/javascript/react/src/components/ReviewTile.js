@@ -131,7 +131,6 @@ class ReviewTile extends React.Component {
   }
 
   render() {
-    console.log(this.props.user.avatar.url)
    let date = Date(this.props.created_at).toString().substring(3,15)
    let button
    if (this.props.current_user.admin) {
