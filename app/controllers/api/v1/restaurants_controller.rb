@@ -6,7 +6,10 @@ class Api::V1::RestaurantsController < ApplicationController
 
   def show
     restaurant = Restaurant.find(params["id"]).to_json(include: {reviews: {include: :user}})
-    render json: { restaurant: restaurant }
+
+    reviews = Review.where(restaurant_id: params["id"]).order('created_at DESC').to_json(include: :user)
+
+    render json: { restaurant: restaurant, reviews: reviews }
   end
 
   def create

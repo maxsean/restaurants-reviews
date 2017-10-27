@@ -1,9 +1,14 @@
-<h2> User Detail:</h2>
+<h2 class="admin-header"> User Detail:</h2>
 
-<ul>
-<li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
-<li>Username: <%= @user.username %></li>
-<li>email: <%= @user.email %></li>
-</ul>
+<div class="admin-lists">
+  <div class="list-item item">
+    <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
+    <li>Username: <%= @user.username %></li>
+    <li>email: <%= @user.email %></li>
+  </div>
+</div>
 
-<%= link_to 'Delete this user',  admin_user_path(@user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="admin-button">
+  <%= link_to 'Delete this user',  admin_user_path(@user.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Back', admin_users_path %>
+</div>
