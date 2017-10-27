@@ -131,6 +131,7 @@ class ReviewTile extends React.Component {
   }
 
   render() {
+    console.log(this.props.user.avatar.url)
    let date = Date(this.props.created_at).toString().substring(3,15)
    let button
    if (this.props.current_user.admin) {
@@ -174,7 +175,7 @@ class ReviewTile extends React.Component {
        <div className="review-container">
        <div className="redLine">
          <div className="column left">
-           <img className="profilePhoto" src="https://iheartdogs.com/wp-content/uploads/2014/03/dogchef.jpg"></img>
+           <img className="profilePhoto" src="https://i.pinimg.com/474x/6b/2b/71/6b2b7195bbcd1fd5e4507997c8baf74d--user-profile-screen-design.jpg"></img>
            <p><strong>{this.props.user.username}</strong></p>
            {button}
          </div>

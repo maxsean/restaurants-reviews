@@ -133,7 +133,7 @@ class RestaurantFormContainer extends Component {
 
         <div className='button-group'>
           <button className='button' onClick={this.handleClearForm}>Clear</button>
-          <input className='button' type='submit' value='Submit' />
+          <input className='button' type='submit' value='Submit'/>
         </div>
       </form>
     )

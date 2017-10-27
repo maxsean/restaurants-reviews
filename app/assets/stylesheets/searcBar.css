@@ -1,0 +1,23 @@
+.searchBar {
+  width: 30%;
+}
+.searchContainer {
+  background-image: url("https://static.pexels.com/photos/17738/pexels-photo.jpg");
+}
+
+.backButton {
+  margin-top: 20px;
+  margin-left: 42px;
+}
+.searchButton button{
+  float: right;
+  margin: 0;
+}
+.searchButton {
+  width 20%;
+  color: white;
+  float: right;
+  font-size: 18px;
+  float: right;
+  display: inline-block;
+}
