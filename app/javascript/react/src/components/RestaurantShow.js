@@ -20,9 +20,9 @@ const RestaurantShow = (props) => {
       </div>
       <div className="column restaurantRight">
         <div className="column restaurantLeft restaurantDataLeft">
+          <div className="contactLabel">
           <div className= "nameStrong">{props.name}</div>
             <div className="dollarValue">PRICE: {dollar_value}</div>
-            <div className="contactLabel">
             <p><strong>Address: </strong>{props.address}</p>
             <p><strong>City: </strong>{props.city}</p>
             <p><strong>State: </strong>{props.state}</p>

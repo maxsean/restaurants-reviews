@@ -43,9 +43,10 @@ class RestaurantsContainer extends Component {
 
     return(
       <div>
-        <BackButton/>
+        <div className="backButton"><BackButton/></div>
         <div className='formContainer'>
           <RestaurantFormContainer
+            current_user={this.state.current_user}
             addNewRestaurant={addNewRestaurant}
           />
         </div>

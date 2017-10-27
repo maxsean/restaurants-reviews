@@ -20,6 +20,7 @@ class RestaurantShowContainer extends React.Component {
     this.addNewReview = this.addNewReview.bind(this)
     this.deleteReview = this.deleteReview.bind(this)
     this.fetchRestaurant = this.fetchRestaurant.bind(this)
+    this.makeNewSearch = this.makeNewSearch.bind(this)
   }
   componentDidMount() {
     fetch('/api/v1/users.json', {
@@ -127,11 +128,15 @@ class RestaurantShowContainer extends React.Component {
     </div>
     }
     return(
-      <div>
-        <SearchFormContainer
-          makeNewSearch = {this.makeNewSearch}
-        />
-        <BackButton/>
+    <div>
+      <div className="searchContainer">
+        <div className="searchBar">
+          <SearchFormContainer
+            makeNewSearch = {this.makeNewSearch}
+          />
+      </div>
+      </div>
+      <div className="backButton"><BackButton/></div>
         {container}
       </div>
     )

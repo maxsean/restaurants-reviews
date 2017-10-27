@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Oregano');
+@import url('https://fonts.googleapis.com/css?family=Oregano|Brea+Serif|Crete+Round|Roboto|Kanit|Cabin+Condensed');
 
 .menu-text a {
   font-size: 35px;
@@ -94,11 +94,22 @@ a {
 }
 
 .welcome-quote {
-  color: white;
-  background-color: #adc0b4;
-  font-size: 30px;
-  line-height: 40px;
+  color: #56595C;
+  text-align: center;
+  font-size: 35px;
+  background-color: #E7EDEA;
+  line-height: 1.1em;
   padding: 40px 200px;
+  font-family: 'Crete Round', serif;
+  height: 200px;
+  border-top: .25px solid silver;
+  border-bottom: .25px solid silver;
+  margin: auto;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  padding-left: 200px;
+  padding-right: 200px;
+  box-shadow: 2px 2px 9px 0px #888888;
 }
 
 .formContainer {

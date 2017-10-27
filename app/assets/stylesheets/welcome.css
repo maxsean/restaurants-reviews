@@ -1,11 +1,13 @@
 * {
   padding: 0;
   margin: 0;
-
 }
 
 .searchContainer {
-  background-image: url("https://static.pexels.com/photos/326278/pexels-photo-326278.jpeg");
+  background-image: url("https://static.pexels.com/photos/349610/pexels-photo-349610.jpeg");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2px solid red;
 }
 
 .searchBar {

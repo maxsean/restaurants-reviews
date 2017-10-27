@@ -48,15 +48,15 @@ describe('RestaurantShow', () => {
   });
 
   it('should have description of restaurant', () => {
-    expect(wrapper.find('p').at(4).text()).toBe('Description: my favorite description');
+    expect(wrapper.find('p').at(7).text()).toBe('my favorite description');
   });
 
   it('should have phone number of restaurant', () => {
-    expect(wrapper.find('p').at(5).text()).toBe('Phone Number: 00000');
+    expect(wrapper.find('p').at(4).text()).toBe('Phone Number: 00000');
   });
 
   it('should have website url of restaurant', () => {
-    expect(wrapper.find('p').at(6).text()).toBe('Website: www.test.fake');
+    expect(wrapper.find('p').at(5).text()).toBe('Website: www.test.fake');
   });
 
   it('should have image of restaurant', () => {

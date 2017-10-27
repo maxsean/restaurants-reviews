@@ -31,6 +31,7 @@ render() {
         value={this.state.value}
         handleInputChange={this.handleInputChange}
       />
+      <div className="searchButton"><button>SEARCH</button></div>
     </form>
   )
 }

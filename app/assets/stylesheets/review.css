@@ -31,6 +31,8 @@ img.profilePhoto {
   float: left;
   width: 150px;
   height: 150px;
+  border-radius: 5px;
+  border: 1px solid silver;
   object-position: center;
   object-fit: cover;
 }
@@ -178,7 +180,6 @@ img.profilePhoto {
   font-family: 'Roboto', sans-serif;
 }
 #date, strong#date {
-
   margin-left: 0;
   padding-top: 0;
   padding-left: 0;
