@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: restaurants-review_production
-  username: restaurants-review
-  password: <%= ENV['RESTAURANTS-REVIEW_DATABASE_PASSWORD'] %>
+  database: restaurants-review_development
+  # username: restaurants-review
+  # password: <%= ENV['RESTAURANTS-REVIEW_DATABASE_PASSWORD'] %>
