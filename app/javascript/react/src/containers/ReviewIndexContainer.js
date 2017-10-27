@@ -5,10 +5,14 @@ class ReviewIndexContainer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      reviews: {}
     }
     this.handleDelete = this.handleDelete.bind(this)
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ reviews: nextProps.reviews });
+  }
   handleDelete(id) {
     this.props.deleteReview(id)
   }

@@ -1,3 +1,17 @@
+.image-container a {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin-top: 35px;
+  object-position: center;
+  object-fit: cover;
+  padding: 0;
+  float: none;
+  display: inherit;
+  position: relative;
+}
+
 .restaurant-tile {
   border-left: 5px solid #FFC52C;
   border-right: 5px solid #FFC52C;
@@ -21,7 +35,6 @@
   height: 320px;
   border: 1px solid silver;
   border-radius: 5px;
-  margin-top: 35px;
   object-position: center;
   object-fit: cover;
 }
@@ -53,6 +66,7 @@
   margin-left: 0;
   width: 30%;
 }
+
 .restaurantDataRight {
   width: 70%;
 

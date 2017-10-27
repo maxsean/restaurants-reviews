@@ -6,25 +6,48 @@
 
 ![Coverage Status](https://coveralls.io/repos/maxsean/restaurants-reviews/badge.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Eatalike
+A review website for restaurants
 
-Things you may want to cover:
+## Introduction
+This project was created in two weeks as part of a bootcamp curriculum. The goal was to create an application with RESTful API back-end and a React-featured front-end. Users can sign up to post their restaurant(s), leave a review on other restaurants, and upvote or downvote other reviews. Users can also view demographic data of a restaurant's reviews to gain a quick impression.  
 
-* Ruby version
+## Technologies
+* Ruby on Rails: back-end mainly used for API endpoints
+* React.js: React app for quick and responsive user interface
+* D3.js: visualization of review demographic data
+* Devise: user authentication and authorization
+* Carrierwave: image upload
+* Capybara: testing Rails components and features
+* Jasmine-Enzyme: testing React components and features
 
-* System dependencies
+## Setup
+In app directory, run:
+```
+bundle install
+rake db:create
+rake db:migrate
+rake db:test:prepare
+rails s
+```
+In a separate terminal tab, run:
+```
+yarn install
+./bin/webpack-dev-server
+```
+Then navigate to `localhost:3000`.
 
-* Configuration
+For Capybara tests run `rake`
+and for Jasmine-Enzyme tests run `karma start`.
 
-* Database creation
+## ToDo
+* External API integration
+* Search filters
+* Review filters
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contributors
+* [Mark Swinimer](github.com/markswinimer)
+* [Olivia Zhang](github.com/oliviayizhang)
+* [Dev Person](github.com/devlin-person)
+* [Sean Ma](github.com/maxsean)

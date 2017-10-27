@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BackButton from '../components/BackButton'
 import RestaurantFormContainer from './RestaurantFormContainer'
 
 class RestaurantsContainer extends Component {
@@ -41,11 +42,13 @@ class RestaurantsContainer extends Component {
     let addNewRestaurant = (formPayLoad) => this.addNewRestaurant(formPayLoad)
 
     return(
-      <div className='formContainer'>
-        <RestaurantFormContainer
-          addNewRestaurant={addNewRestaurant}
-          current_user={this.state.current_user}
-        />
+      <div>
+        <BackButton/>
+        <div className='formContainer'>
+          <RestaurantFormContainer
+            addNewRestaurant={addNewRestaurant}
+          />
+        </div>
       </div>
     )
   }
