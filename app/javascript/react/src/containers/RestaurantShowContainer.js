@@ -81,6 +81,9 @@ class RestaurantShowContainer extends React.Component {
           dining_type={this.state.restaurant.restaurant_dining_type}
           food_type={this.state.restaurant.restaurant_food_type}
         />
+        <div className="newReviewHeader">
+          <div className="reviewHeaderTitle">Leave a Review</div>
+        </div>
         <ReviewFormContainer
           review={this.state.review}
           addNewReview={this.addNewReview}

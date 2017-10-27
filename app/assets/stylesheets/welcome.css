@@ -4,10 +4,6 @@
 
 }
 
-.welcomeContainer {
-
-}
-
 .searchContainer {
   background-image: url("https://static.pexels.com/photos/326278/pexels-photo-326278.jpeg");
 }
@@ -18,4 +14,8 @@
   width: 40vw;
   margin:  0 auto;
   font-family: 'Roboto', sans-serif;
+}
+
+.chart {
+  margin-top: 30px;
 }

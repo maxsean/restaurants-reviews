@@ -37,15 +37,44 @@ img.profilePhoto {
 
 .reviewHeaderTitle {
   height: 100%;
-  color: #030D4F;
+  color: #56595C;
   padding-top: 2px;
   padding-left: 25px;
   margin-left: 20px;
-  width: 188px;
+  width: 400px;
 }
 
+.reviewHeaderTitle {
+  height: 100%;
+  color: #56595C;
+  padding-top: 2px;
+  padding-left: 25px;
+  margin-left: 20px;
+  width: 400px;
+}
+.newReviewHeader {
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #56595C;
+  border-left: 5px solid #E7EDEA;
+  border-right: 5px solid #E7EDEA;
+  height: 50px;
+  width: 550px;
+  background-color: #F6F6F6;
+  border-top: .25px solid silver;
+  border-bottom: .25px solid silver;
+  border-radius: 5px;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-bottom: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  box-shadow: 2px 2px 9px 0px #888888;
+}
 .reviewHeader {
-    font-family: 'Cabin Condensed', sans-serif;
+  font-family: 'Cabin Condensed', sans-serif;
   font-size: 30px;
   font-weight: bold;
   color: #56595C;
