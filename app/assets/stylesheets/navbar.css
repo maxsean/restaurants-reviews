@@ -1,0 +1,19 @@
+.top-bar {
+  background: #ffc52c;
+  border-bottom: 2px solid #fb0c06;
+  text-shadow: 1px 1px grey;
+}
+
+button, .button, input.button {
+background: #cc0000;
+background: -webkit-linear-gradient(#c84648, #e06666);
+background: linear-gradient(#c84648, #e06666);
+border: 1px solid #635f59;
+border-radius: 5px;
+box-shadow: 0 1px #635f59;
+padding: 8px 20px;
+display: inline-block;
+font: normal 700 15px/1 "Ubuntu", sans-serif;
+margin-right: 10px;
+color: white;
+}

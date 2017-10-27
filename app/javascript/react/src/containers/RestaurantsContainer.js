@@ -34,7 +34,6 @@ class RestaurantsContainer extends Component {
     })
     if (this.state.restaurant !== {}) {
       window.location.href="/"
-      // window.location.href=`/restaurants/${this.state.restaurant.id}`
     }
   }
 

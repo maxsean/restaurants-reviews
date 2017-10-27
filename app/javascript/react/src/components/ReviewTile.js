@@ -117,11 +117,11 @@ class ReviewTile extends React.Component {
     let bubbles = num.map(n => {
       if (n <= value) {
         return (
-          <i class="fa fa-circle" aria-hidden="true"></i>
+          <i className="fa fa-circle" aria-hidden="true"></i>
         )
       } else {
         return (
-          <i class="fa fa-circle-o" aria-hidden="true"></i>
+          <i className="fa fa-circle-o" aria-hidden="true"></i>
         )
       }
     })
@@ -178,9 +178,8 @@ class ReviewTile extends React.Component {
         </div>
           <div className="column right">
             <div className="column right commentsLeft">
-              <h3>Comment</h3>
-              <p>Reviewed on{date}</p>
-              <p>{this.props.comment}</p>
+              <div className="commentTitle">Comment<span id="date">{date}</span></div>
+              <p className="commentBody">{this.props.comment}</p>
             </div>
             <div className="column right commentsRight">
               <button
