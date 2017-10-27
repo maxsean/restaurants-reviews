@@ -19,8 +19,11 @@ class Api::V1::ReviewsController < ApplicationController
      )
 
     if review.save
-      ReviewMailer.new_review(review).deliver_now
-      render json: {review: review}
+      # ReviewMailer.new_review(review).deliver_now
+
+      reviews = Review.where(restaurant_id: body["restaurant_id"]).order('created_at DESC').to_json(include: :user)
+
+      render json: {reviews: reviews}
     end
   end
 

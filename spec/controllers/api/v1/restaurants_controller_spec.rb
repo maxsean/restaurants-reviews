@@ -28,7 +28,23 @@ RSpec.describe Api::V1::RestaurantsController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 
-      expect(returned_json.length).to eq 1
+      expect(returned_json.length).to eq 2
+      expect(expected_json["name"]).to eq "Panera"
+      expect(expected_json["city"]).to eq "Boston"
+      expect(expected_json["dollar_value"]).to eq 2
+    end
+  end
+
+  describe "GET#show" do
+    it "should return a restaurant with its associations when given a restaurant id" do
+      get :show, params: {id: first_restaurant.id}
+      returned_json = JSON.parse(response.body)
+      expected_json = JSON.parse(returned_json["restaurant"])
+
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq("application/json")
+
+      expect(returned_json.length).to eq 2
       expect(expected_json["name"]).to eq "Panera"
       expect(expected_json["city"]).to eq "Boston"
       expect(expected_json["dollar_value"]).to eq 2

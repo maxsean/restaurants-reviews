@@ -5,7 +5,6 @@ import RestaurantsContainer from './containers/RestaurantsContainer';
 import ReviewFormContainer from './containers/ReviewFormContainer';
 import RestaurantShowContainer from './containers/RestaurantShowContainer';
 
-
 const App = (props) => {
   return(
     <div className="mainContainer">

@@ -5,7 +5,7 @@ import { mount } from 'enzyme';
 import { shallow } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 
-describe('A test for RestaurantsContainer', () => {
+xdescribe('A test for RestaurantsContainer', () => {
   let wrapper;
 
   beforeEach(() => {
