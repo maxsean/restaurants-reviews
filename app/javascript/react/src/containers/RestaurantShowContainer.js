@@ -83,7 +83,9 @@ class RestaurantShowContainer extends React.Component {
   render() {
     let container;
     let reviewForm;
+    let sign_in_notice = "Please sign in to leave a review";
     if(this.state.current_user.id){
+      sign_in_notice = "Leave a Review";
       reviewForm =
       <ReviewFormContainer
         review={this.state.review}
@@ -121,7 +123,7 @@ class RestaurantShowContainer extends React.Component {
           food_type={this.state.restaurant.restaurant_food_type}
         />
         <div className="newReviewHeader">
-          <div className="reviewHeaderTitle">Leave a Review</div>
+          <div className="reviewHeaderTitle"> {sign_in_notice}</div>
         </div>
         {reviewForm}
         {reviews}
