@@ -20,19 +20,20 @@ const RestaurantShow = (props) => {
       </div>
       <div className="column restaurantRight">
         <div className="column restaurantLeft restaurantDataLeft">
+          <div className="contactLabel">
           <div className= "nameStrong">{props.name}</div>
             <div className="dollarValue">PRICE: {dollar_value}</div>
-            <div className="contactLabel">
             <p><strong>Address: </strong>{props.address}</p>
             <p><strong>City: </strong>{props.city}</p>
             <p><strong>State: </strong>{props.state}</p>
             <p><strong>Zip: </strong>{props.zip}</p>
+            <p><strong>Phone Number: </strong>{props.phone_number}</p>
+            <p><strong>Website: </strong>{props.website_url}</p>
           </div>
         </div>
         <div className="column restaurantRight restaurantDataRight">
-          <p><strong>Description: </strong>{props.description}</p>
-          <p><strong>Phone Number: </strong>{props.phone_number}</p>
-          <p><strong>Website: </strong>{props.website_url}</p>
+          <p><strong>Restaurant Description</strong></p>
+          <p>{props.description}</p>
           <div className="chart">
             <button><a href={`/charts/${props.id}`}>Review Demographics</a></button>
           </div>

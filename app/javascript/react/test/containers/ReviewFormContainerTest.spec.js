@@ -3,6 +3,7 @@ import TextAreaField from '../../src/components/TextAreaField'
 import RadioBooleanField from '../../src/components/RadioBooleanField'
 import RadioButtonField from '../../src/components/RadioButtonField'
 import ReviewFormContainer from '../../src/containers/ReviewFormContainer'
+import DropMenuComponent from '../../src/components/DropMenuComponent'
 import { mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
@@ -42,8 +43,8 @@ describe('ReviewFormContainer', () => {
         value: "Submit"
     })
   })
-  it('should render the text input field components', () => {
-    expect(wrapper.find(TextInputField)).toBePresent();
+  it('should render the drop down menu component', () => {
+    expect(wrapper.find(DropMenuComponent)).toBePresent();
   })
   it('should render a text area field component', () => {
     expect(wrapper.find(TextAreaField)).toBePresent();
@@ -79,7 +80,7 @@ describe('ReviewFormContainer', () => {
       comment: "It was great!",
       checked: false
     })
-    expect(wrapper.find(TextInputField).props()).toEqual({
+    expect(wrapper.find(DropMenuComponent).props()).toEqual({
       content: "outing",
       label: "Reason of visit: ",
       name: "reason_of_visit",

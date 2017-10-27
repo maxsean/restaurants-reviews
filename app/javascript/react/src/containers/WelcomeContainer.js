@@ -12,7 +12,7 @@ class WelcomeContainer extends Component {
     return(
       <div>
         <div className="welcome-quote">
-          "There are many restaurant review sites. Good lord, there are so many. What is this one? It's got them pie charts. I love pie charts. I love them here. I love them even over there. Yeah."  - Sean, 2017
+          You would not have the same art on the walls in every restaurant or the same waiter uniforms. Neither should you have the same service style at every restaurant.
         </div>
         <RestaurantTile
           id={this.props.sample_restaurant.id}

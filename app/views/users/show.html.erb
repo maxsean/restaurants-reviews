@@ -1,15 +1,16 @@
 <h1>Your Profile</h1>
 
-<button><%= link_to 'Edit Profile', edit_user_registration_path %></button>
+<div class='profile-text'>
+  Name: <%= @user.first_name %> <%= @user.last_name %> <br />
 
-<div>
-Name: <%= @user.first_name %> <%= @user.last_name %> <br />
+ Username: <%= @user.username %><br />
 
-Username: <%= @user.username %><br />
-
-Email: <%= @user.email %><br />
-
-Profile Picture: <br />
+ Email: <%= @user.email %><br />
 </div>
 
-<button><%= link_to 'Back', root_path %></button>
+<div class='profile-avatar'>
+  <%= image_tag(@user.avatar.medium) %>
+</div>
+</br>
+<button class='button'><%= link_to 'Edit Profile', edit_user_registration_path %></button>
+<button class='button'><%= link_to 'Back', root_path %></button>

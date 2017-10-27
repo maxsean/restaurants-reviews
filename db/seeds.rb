@@ -8,6 +8,7 @@ user4 = User.create!(first_name: "Hannah", last_name: "Slattery", username: "hms
 
 user5 = User.create!(first_name: "Alex", last_name: "Gold", username: "aj_gold", email: "a.gold@gmail.com", password: "321654")
 
+user6 = User.create!(first_name: "Ad", last_name: "Min", username: "admin", email: "admin@gmail.com", password: "123456", admin: true)
 
 restaurant1 = Restaurant.create!(name: "The Barking Crab", address: "88 Sleeper St.", city: "Boston", state: "MA", zip: "02210", dollar_value: 2, description: "Lively waterfront seafood joint with open-air picnic-table dining & views of the Boston Harbor.", picture: "http://2.bp.blogspot.com/_OcRNnmwp9Ig/TGISQrxDccI/AAAAAAAAB38/XwDNplJTO1Y/s1600/DSC02722.JPG", phone_number: "6174262722", website_url: "www.barkingcrab.com", user: user1)
 
